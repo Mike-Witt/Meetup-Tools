@@ -13,7 +13,7 @@ pip install pyzipcode
 pip install mechanize
 ```
 
-To a .kml file for the group called My-Group-Name:
+To a make .kml file for the group called My-Group-Name:
 ```
 ./Make-Zipcode-Dictionary.py My-Group-Name
 ./Make-Zipcode-Map.py -bynum My-Group-Name

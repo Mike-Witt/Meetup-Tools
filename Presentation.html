@@ -1,0 +1,110 @@
+
+<style type="text/css">
+    ul { padding-top 0pt; }
+    ul li { padding-bottom: 4pt; }
+    ol { padding-top 0pt; }
+    ol li { padding-bottom: 4pt; }
+</style>
+
+<title>Webscraping Meetup</title>
+<link rel="shortcut icon" href="http://localhost/Icons/point.ico">
+<hr>
+<center>
+<h2>Mapping Meetup Groups</h2>
+</center>
+<hr>
+
+<h3>Motivation</h3>
+
+I've often wondered where is the best place to hold meetups. Often I've
+tried emailing an polling groups to ask in what part of town people live,
+but I've never gotten much response to any of those queries.
+<p>
+I noticed that meetup member pages have the member's zip code on them.
+It's not visible, but it's there. This gives a "reasonable" amount of
+location information (as long as the person actually put in their correct
+zip code).
+<p>
+So I had the idea that I might be able to do a little "webscraping" of
+the member pages to get the zip code info, and then somehow map it out
+on google maps, providing a geographic map of the group members. This
+did end up working, at least to some extent.
+
+<h3>What you need before you can run the code</h3>
+First, you need to have all the "basic python stuff" installed.
+    If you're not already using python you might want to do this 
+    with "anaconda" which can be found at:
+    <a href="https://www.continuum.io/downloads">
+    https://www.continuum.io/downloads</a>
+
+Then, there are two additional things: <code>mechanize</code> which helps
+    to download web pages in python, and <code>pyzipcode</code>, which
+    translates US zip codes to geographic (longitude and latitude) coordinates.
+
+<h3>The structure of the code</h3>
+The system I ended up with has five elements:
+<ol>
+<li> A python program <code>Make-Zipcode-Dictionary.py</code> 
+    which reads the member list of your group and produces a file
+    containing a python "dictionary" that tells which group members
+    are in which zip code.
+
+<li> A python program <code>Make-Zipcode-Map.py</code> which reads the
+    dictionary file, sorts it based on various options, and produces
+    a .kml file. This file describes the map of your group.
+    KML is a markup language which can be uploded to
+    google maps (for example).
+
+<li> A python dictionary file: <code>My-Group-Name.dic</code>
+
+<li> A Keyhole markup language file: <code>My-Group-Name.kml</code>
+
+<li> A google map of your group.
+</ol>
+
+<h3>Summary</h2>
+<pre>
+  pip install pyzipcode
+  pip install mechanize
+  ./Make-Zipcode-Dictionary.py My-Group-Name
+  ./Make-Zipcode-Map.py -bynum My-Group-Name
+  Upload My-Group-Name.kml to google maps
+</pre>
+
+<h3>Limitations</h2>
+<ul>
+<li> I've only tested this with python 2.7.6, and I'm pretty sure it
+    would not run as-is on python 3.
+
+<li> The exact commands listed above are for Linux. There may be differences
+    on other systems.
+
+<li> Doesn't work with groups that are visible only to members.
+    <p>
+    I haven't yet figured out how to capture the cookie(s) that Meetup
+    uses to determine whether you're logged in. So I can only do
+    publicly visible member lists.
+
+<li> Only works with with US groups
+    <p>
+    This program maps members based on zip (postal) codes. It appears that
+    Meetup only uses these in the US, and uses city names elsewhere. I
+    don't currently know where to find a public database that maps cities
+    to geo coordinates. I imagine there must be one. <i>Does anybody know?</i> 
+
+<li> Only works for members who gave their correct zip code (obviously).
+
+<li> Meetup may change the format of their pages any time. At best, this
+    means tweaking the code for the new format. At worst, they might stop
+    providing zip code information, obsoleting the whole process.
+</ul>
+
+<h3>References</h3>
+<ul>
+<li><a href="https://developers.google.com/kml/">
+    https://developers.google.com/kml</a> -
+    Keyhole Markup Language homepage.
+
+<li> <a href="https://developers.google.com/kml/documentation/kmlreference?csw=1#elements-specific-to-colorstyle">https://developers.google.com/kml/documentation/kmlreference?csw=1#elements-specific-to-colorstyle</a> - Reference for KML colors</a>
+
+</ul>
