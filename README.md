@@ -6,9 +6,14 @@ THIS CODE IS NOT READY FOR USE YET!
 
 Summary:
 <code>
-<br>pip install pyzipcode
-<br>pip install mechanize
-<br>./Make-Zipcode-Dictionary.py My-Group-Name
-<br>./Make-Zipcode-Map.py -bynum My-Group-Name
+
+pip install pyzipcode
+
+pip install mechanize
+
+./Make-Zipcode-Dictionary.py My-Group-Name
+
+./Make-Zipcode-Map.py -bynum My-Group-Name
 </code>
-<br>upload My-Group-Name.kml to Google Maps
+
+upload My-Group-Name.kml to Google Maps
