@@ -1,14 +1,11 @@
 #!/usr/bin/env python
 
 #
-# Build a KML file based on a zipcode dictionary of members. 
+# Build a KML file based on a location dictionary of members. 
 #
-# I'm saving all the "print" code and putting in the PRINT flag so that
-# I can ultimately just use this program and get rid of SortDictFile.py
 
 import pickle
 import sys
-from geopy.geocoders import Nominatim
 
 # Specific icons that can be used. Select one below
 
@@ -20,15 +17,12 @@ HOUSE  = 'http://www.gstatic.com/mapspro/images/stock/1197-fac-headquarters.png'
 # Parameters currently selected by editing the file
 #
 
-# PRINT = True means don't product the file, just print debug stuff
-PRINT = False 
-
 # Which icon to use. See defs above
 ICON = STAR
 
-# Intensity for zip codes with most members (0 is the most intensity)
+# Intensity for locations with most members (0 is the most intensity)
 high_color = 0
-# Intensity for zip codes with least members
+# Intensity for locations with least members
 low_color = 200
 
 def out(msg): sys.stdout.write(msg)
@@ -39,14 +33,12 @@ if len(sys.argv) < 2:
     exit()
 
 if sys.argv[1] == '-help':
-    print('%s -byzip GROUP_NAME'%sys.argv[0])
-    print('  Sort by zip code')
+    print('%s -byloc GROUP_NAME'%sys.argv[0])
+    print('  Sort by location')
     print('%s -bynum GROUP_NAME'%sys.argv[0])
     print('  Sort by number of members')
     print('%s -stats GROUP_NAME'%sys.argv[0])
     print('  Just print statistics')
-    print('%s -sum GROUP_NAME'%sys.argv[0])
-    print('  Summarize by popular zip codes')
     exit()
 
 if len(sys.argv) >= 3: opt = sys.argv[1]
@@ -60,10 +52,10 @@ kml_name = group_name + '.kml'
 kml = 0
 
 # This is a dictionary where the key is the number of members and
-# the values is the number of zipcodes which have that many members.
+# the values is the number of locations which have that many members.
 number_table = {}
 # This is a dictionary where the key is the number of members and
-# the values is the color for zipcodes with that many members
+# the values is the color for locations with that many members
 color_table = {}
 
 #
@@ -71,12 +63,8 @@ color_table = {}
 #
 
 f = open(dict_name, 'r')
-zip_dict = pickle.load(f)
+member_dictionary = pickle.load(f)
 f.close()
-
-#
-# Load the zip code / coordinate database
-#
 
 #
 # These functions are for writing the .kml file
@@ -130,24 +118,12 @@ def end_kml():
     kmlline("    </Document>")
     kmlline("</kml>")
 
-def map_zip(zipcode, people):
-    global kml, zip_dict, zcdb
+def map_location(item):
+    global kml
 
-    geolocator = Nominatim()
-    try:
-        location = geolocator.geocode(zipcode)
-    except:
-        print('Don\'t know zip code: "%s"'%zipcode)
-        return # Just skip members with unknown zip code
-    if location == None:
-        print('Don\'t know zip code: "%s"'%zipcode)
-        return
-
-    lat = location.latitude
-    lon = location.longitude
-    coords = '<coordinates>%s,%s,0.0</coordinates>'%(lon, lat)
-
-    people = zip_dict[zipcode]
+    location = item[1][0]
+    people = item[1][1]
+    coords = location[4] 
     N = len(people)
     data = ''
     for n in range(N):
@@ -156,7 +132,12 @@ def map_zip(zipcode, people):
 
     icon_name = str(N)
     kmlline("        <Placemark>")
-    kmlline("            <name>Zip Code: %s (%s members)</name>"%(zipcode, N))
+    country = location[0].upper() # Make country code upper case
+    town = location[1]
+    zipcode = location[2]
+    if zipcode != '': LOC = zipcode + ', ' + country
+    else: LOC = town + ', ' + country
+    kmlline("            <name>Location: %s (%s members)</name>"%(LOC, N))
     kmlline("            <description><![CDATA[%s]]></description>"%data)
     kmlline("            <styleUrl>#icon-%s</styleUrl>"%icon_name)
     kmlline("            <Point>")
@@ -165,69 +146,35 @@ def map_zip(zipcode, people):
     kmlline("        </Placemark>")
     kmlline("")
 
-def print_zip(z, people):
-    out('%s: '%z)
-    first = True
-    for person in people:
-        if not first: out(', ')
-        out(person)
-        first = False
-    print
-
-def sort_by_zip():
-    global zip_dict
-    for z in sorted(zip_dict):
-        people = zip_dict[z]
-        if PRINT: print_zip(z, people)
-        else: map_zip(z, people)
+def sort_by_location():
+    global member_dictionary
+    for item in sorted(member_dictionary.items()):
+        map_location(item)
 
 def mykey(x):
-    #print('mykey: x[0]=%s, x[1]=%s'%( (x[0]), (x[1]) ))
-    #print('len(x[1]=%s' %len(x[1]))
-    return(len(x[1]))
+    # We want to key on the number of people. 
+    # key = x[0]
+    # location, people = x[1]
+    # people = x[1][1]
+    return(len(x[1][1]))
 
 def sort_by_number():
-    global zip_dict
-    for item in sorted(zip_dict.items(), key=mykey, reverse=True):
-        zip = item[0]
-        people = item[1]
-        if PRINT: print_zip(zip, people)
-        else: map_zip(zip, people)
-
-# Summarize popular zip codes only. This just prints them with population.
-def summarize():
-    global zip_dict
-    with_one = 0
-    for item in sorted(zip_dict.items(), key=mykey, reverse=True):
-        zip = item[0]
-
-        ### CHECK FOR VALID ZIPCODE - SHOULD DO THIS WHEN BUILDING FILE! ###
-        try: 
-            foo = int(zip)
-        except:
-            continue
-        if len(zip) != 5:
-            continue
-        people = item[1]
-        n = len(people)
-        if n > 1: print('%s: has %s members'%(zip, n))
-        else: with_one += 1
-    print('In addition, there are %s zipcodes with only one member'%with_one)
+    global member_dictionary
+    for item in sorted(member_dictionary.items(), key=mykey, reverse=True):
+        map_location(item)
 
 # Get statistics about the group and members
-# Right now we just build a table of the "grouping" of members in zipcodes
+# Right now we just build a table of the "grouping" of members in locations
 
 def get_stats():
-    global zip_dict, number_table, color_table
-    #print('get_stats:')
-    for item in sorted(zip_dict.items(), key=mykey, reverse=True):
-        zip = item[0]
-        people = item[1]
+    global member_dictionary, number_table, color_table
+    for item in sorted(member_dictionary.items(), key=mykey, reverse=True):
+        location = item[0]
+        people = item[1][1]
         n_members = len(people)
-        #print('  Zipcode: %s, n_people: %s'%(zip, n_members))
         try:
-            n_zipcodes = number_table[n_members]
-            number_table[n_members] = n_zipcodes + 1
+            n_locations = number_table[n_members]
+            number_table[n_members] = n_locations + 1
         except:
             number_table[n_members] = 1
             color_table[n_members] = 0
@@ -237,27 +184,25 @@ def get_stats():
     current_color = high_color
     print('A color division is: %s'%division)
     for n_members in sorted(number_table, reverse=True):
-        n_zipcodes = number_table[n_members]
+        n_locations = number_table[n_members]
         color_table[n_members] = current_color
         current_color += division
 
         #debug
-        msg = '  There are %s zip codes with %s members'%(n_zipcodes, n_members)
+        msg = '  There are %s locations with %s members'%(n_locations, n_members)
         msg += ', color: %s'%color_table[n_members]
         print(msg)
 
-if opt == '-byzip':
-    if PRINT == False: start_kml()
+if opt == '-byloc':
+    start_kml()
     get_stats()
-    sort_by_zip()
-    if PRINT == False: end_kml()
+    sort_by_location()
+    end_kml()
 elif opt == '-bynum':
-    if PRINT == False: start_kml()
+    start_kml()
     get_stats()
     sort_by_number()
-    if PRINT == False: end_kml()
-elif opt == '-sum':
-    summarize()
+    end_kml()
 elif opt == '-stats':
     get_stats()
 else:

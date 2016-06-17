@@ -11,9 +11,12 @@ Things to do:
 * Is there some way to explicitly feed the country code to geopy?
 
 STATUS:
-
-    Make-Dictionary.py / Read-Dictionary.py - APPEAR to be working
-    NEXT: Update Make-Map (LOTS of changes!)
+    
+    London Q group "almost working" (for US and GB)
+    - One london (garbaged) loc maps to S America
+    - There are two different "londons"
+        key: meetup.com/cities/17/london/
+        key: meetup.com/cities/h9/london/
 
 NAMES:
 
