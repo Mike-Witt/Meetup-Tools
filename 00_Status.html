@@ -1,0 +1,46 @@
+
+<h2>Things to do</h2>
+<ul>
+<li> Do the geo lookups in just one place. Probably make-dic
+<li> Is there some way to <i>explicitly</i> feed the country code to geopy?
+</ul>
+
+<h2>Status</h2>
+<ul>
+<li> London Q group "almost working" (for US and GB)
+    <br>- One london (garbaged) loc maps to S America
+    <br>- There are two different "londons"
+    <br>&nbsp;&nbsp; key: meetup.com/cities/17/london/
+    <br>&nbsp;&nbsp; key: meetup.com/cities/h9/london/
+</ul>
+
+<h2>Names</h2>
+<code>
+<ul>
+<li> Denver-Physics-Philosophy-Meetup
+<li> Quantum-Physics-Meetup-Group
+<li> Turning-to-Complexity-Beta
+</ul>
+</code>
+
+<hr>
+What I want is something like this:
+<pre>
+# Meetup-Tools
+
+## Summary
+
+# Before Using:
+```
+pip install pyzipcode
+pip install mechanize
+pip install geopy
+```
+
+# To a make .kml file for the group called My-Group-Name:
+```
+./Make-Dictionary.py My-Group-Name
+./Make-Map.py -bynum My-Group-Name
+```
+Then upload My-Group-Name.kml to Google Maps
+</pre>
