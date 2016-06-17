@@ -28,6 +28,9 @@ def main(argv):
         print('  country = %s'%location[0])
         print('  town    = %s'%location[1])
         print('  zipcode = %s'%location[2])
+        try: print('  address = %s'%location[3])
+        except: print('(Encoding problem printing address?)')
+        print('  coords =  %s'%location[4])
         print('  people  = %s'%people)
 
 main(sys.argv)

@@ -1,0 +1,140 @@
+We should find 22 members
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/185845222/
+(1) Member Name: Don
+Found country = us
+Found zipcode = 80201
+<coordinates>-104.856808,39.726303,0.0</coordinates>
+Adding meetup.com/cities/80201/ to dictionary
+country=us, town=, zipcode=80201, coords=<coordinates>-104.856808,39.726303,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/163356212/
+(2) Member Name: William
+Found country = us
+Found zipcode = 80201
+<coordinates>-104.856808,39.726303,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/188081404/
+(3) Member Name: Charlie
+Found country = us
+Found zipcode = 80234
+<coordinates>-105.00829,39.9091,0.0</coordinates>
+Adding meetup.com/cities/80234/ to dictionary
+country=us, town=, zipcode=80234, coords=<coordinates>-105.00829,39.9091,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/14318117/
+(4) Member Name: Mike
+Found country = us
+Found zipcode = 80222
+<coordinates>-104.92766,39.669237,0.0</coordinates>
+Adding meetup.com/cities/80222/ to dictionary
+country=us, town=, zipcode=80222, coords=<coordinates>-104.92766,39.669237,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/14493829/
+(5) Member Name: Tina
+Found country = us
+Found zipcode = 97201
+<coordinates>-122.68781,45.49894,0.0</coordinates>
+Adding meetup.com/cities/97201/ to dictionary
+country=us, town=, zipcode=97201, coords=<coordinates>-122.68781,45.49894,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/5596597/
+(6) Member Name: Dave
+Found country = us
+Found zipcode = 80260
+<coordinates>-105.00805,39.868635,0.0</coordinates>
+Adding meetup.com/cities/80260/ to dictionary
+country=us, town=, zipcode=80260, coords=<coordinates>-105.00805,39.868635,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/4537169/
+(7) Member Name: Hank
+Found country = us
+Found zipcode = 80201
+<coordinates>-104.856808,39.726303,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/205428499/
+(8) Member Name: Gerald
+Found country = us
+Found zipcode = 80214
+<coordinates>-105.06251,39.745526,0.0</coordinates>
+Adding meetup.com/cities/80214/ to dictionary
+country=us, town=, zipcode=80214, coords=<coordinates>-105.06251,39.745526,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/203672892/
+(9) Member Name: Mary
+Found country = us
+Found zipcode = 80301
+<coordinates>-105.21928,40.044385,0.0</coordinates>
+Adding meetup.com/cities/80301/ to dictionary
+country=us, town=, zipcode=80301, coords=<coordinates>-105.21928,40.044385,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/120907282/
+(10) Member Name: Kevin
+Found country = us
+Found zipcode = 80901
+<coordinates>-104.857828,38.861469,0.0</coordinates>
+Adding meetup.com/cities/80901/ to dictionary
+country=us, town=, zipcode=80901, coords=<coordinates>-104.857828,38.861469,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/10831092/
+(11) Member Name: Karla
+Found country = us
+Found zipcode = 80127
+<coordinates>-105.13052,39.599755,0.0</coordinates>
+Adding meetup.com/cities/80127/ to dictionary
+country=us, town=, zipcode=80127, coords=<coordinates>-105.13052,39.599755,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/45991572/
+(12) Member Name: John
+Found country = us
+Found zipcode = 80201
+<coordinates>-104.856808,39.726303,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/195429869/
+(13) Member Name: teduren
+Found country = us
+Found zipcode = 80232
+<coordinates>-105.08866,39.690387,0.0</coordinates>
+Adding meetup.com/cities/80232/ to dictionary
+country=us, town=, zipcode=80232, coords=<coordinates>-105.08866,39.690387,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/189834969/
+(14) Member Name: Caleb
+Found country = us
+Found zipcode = 80401
+<coordinates>-105.19337,39.735745,0.0</coordinates>
+Adding meetup.com/cities/80401/ to dictionary
+country=us, town=, zipcode=80401, coords=<coordinates>-105.19337,39.735745,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/4598608/
+(15) Member Name: Doug
+Found country = us
+Found zipcode = 80439
+<coordinates>-105.36812,39.642572,0.0</coordinates>
+Adding meetup.com/cities/80439/ to dictionary
+country=us, town=, zipcode=80439, coords=<coordinates>-105.36812,39.642572,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/189190139/
+(16) Member Name: Thornton
+Found country = us
+Found zipcode = 80127
+<coordinates>-105.13052,39.599755,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/193424082/
+(17) Member Name: Anna
+Found country = us
+Found zipcode = 80004
+<coordinates>-105.12263,39.81431,0.0</coordinates>
+Adding meetup.com/cities/80004/ to dictionary
+country=us, town=, zipcode=80004, coords=<coordinates>-105.12263,39.81431,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/2131284/
+(18) Member Name: R.
+Found country = us
+Found zipcode = 80202
+<coordinates>-104.99699,39.751586,0.0</coordinates>
+Adding meetup.com/cities/80202/ to dictionary
+country=us, town=, zipcode=80202, coords=<coordinates>-104.99699,39.751586,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/2044035/
+(19) Member Name: Andy
+Found country = us
+Found zipcode = 80138
+<coordinates>-104.70607,39.523171,0.0</coordinates>
+Adding meetup.com/cities/80138/ to dictionary
+country=us, town=, zipcode=80138, coords=<coordinates>-104.70607,39.523171,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/2276801/
+(20) Member Name: Luna
+Found country = us
+Found zipcode = 80401
+<coordinates>-105.19337,39.735745,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = 
+Fetching the next page ...
+  Link is: http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/?offset=%s&;sort=last_visited&;desc=1
+
+Expected to find 22 members
+Read pages for   20 members
+Found coords for 20 members
+Writing the dictionary to: Denver-Physics-Philosophy-Meetup.dic
+Done!

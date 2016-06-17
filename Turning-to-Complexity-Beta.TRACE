@@ -1,428 +1,808 @@
-We should find 128 members
+We should find 130 members
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/207295054/
+(1) Member Name: Marcus
+Found country = gb
+Found: code = greater_london, town = "><span class="locality" itemprop="addressLocality">Greater London<
+Can't find coords of country = "gb", town = ""><span class="locality" itemprop="addressLocality">Greater London<"
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/67968852/
+(2) Member Name: Vince
+Found country = gb
+Found: code = n7, town = beckenham
+Address: Beckenham, Bromley, London, Greater London, England, UK
+Coords:  <coordinates>-0.0303182,51.4070938,0.0</coordinates>
+Adding meetup.com/cities/n7/beckenham/ to dictionary
+country=gb, town=beckenham, zipcode=, address=Beckenham, Bromley, London, Greater London, England, UK, coords=<coordinates>-0.0303182,51.4070938,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/88873722/
+(3) Member Name: Ben
 Found country = gb
 Found: code = n7, town = south_croydon
-1 of 128 - Name: Ben, Zip code: south_croydon
-Adding south_croydon to dictionary
+Can't find coords of country = "gb", town = "south_croydon"
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/207039208/
+(4) Member Name: Julia
 Found country = gb
 Found: code = 17, town = london
-2 of 128 - Name: Julia, Zip code: london
-Adding london to dictionary
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+Adding meetup.com/cities/17/london/ to dictionary
+country=gb, town=london, zipcode=, address=London, Greater London, England, UK, coords=<coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/206945151/
+(5) Member Name: Mat
 Found country = gb
 Found: code = greater_london, town = "><span class="locality" itemprop="addressLocality">Greater London<
-3 of 128 - Name: Mat, Zip code: "><span class="locality" itemprop="addressLocality">Greater London<
-Adding "><span class="locality" itemprop="addressLocality">Greater London< to dictionary
+Can't find coords of country = "gb", town = ""><span class="locality" itemprop="addressLocality">Greater London<"
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/206924986/
+(6) Member Name: Faheem
 Found country = gb
 Found: code = 17, town = london
-4 of 128 - Name: Faheem, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/206929013/
+(7) Member Name: Sever
 Found country = gb
 Found: code = greater_london, town = "><span class="locality" itemprop="addressLocality">Greater London<
-5 of 128 - Name: Sever, Zip code: "><span class="locality" itemprop="addressLocality">Greater London<
+Can't find coords of country = "gb", town = ""><span class="locality" itemprop="addressLocality">Greater London<"
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/38577112/
+(8) Member Name: Faheem
 Found country = gb
 Found: code = 17, town = london
-6 of 128 - Name: Faheem, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/206846748/
+(9) Member Name: Lorna
 Found country = gb
 Found: code = 17, town = london
-7 of 128 - Name: Lorna, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/206847196/
+(10) Member Name: Sara
 Found country = gb
 Found: code = 17, town = london
-8 of 128 - Name: Sara, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/206786182/
+(11) Member Name: ishmael
 Found country = gb
 Found: code = 17, town = london
-9 of 128 - Name: ishmael, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/202087444/
+(12) Member Name: V
 Found country = gb
 Found: code = greater_london, town = "><span class="locality" itemprop="addressLocality">Greater London<
-10 of 128 - Name: V, Zip code: "><span class="locality" itemprop="addressLocality">Greater London<
+Can't find coords of country = "gb", town = ""><span class="locality" itemprop="addressLocality">Greater London<"
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/206739933/
+(13) Member Name: Barbara
 Found country = gb
 Found: code = 17, town = london
-11 of 128 - Name: Barbara, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/157714502/
+(14) Member Name: Duncan
 Found country = gb
 Found: code = 17, town = london
-12 of 128 - Name: Duncan, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/201298411/
+(15) Member Name: Stevie
 Found country = gb
 Found: code = 17, town = london
-13 of 128 - Name: Stevie, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/206500330/
+(16) Member Name: Deb
 Found country = gb
 Found: code = 17, town = london
-14 of 128 - Name: Deb, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/206457283/
+(17) Member Name: Monirul
 Found country = gb
 Found: code = 17, town = london
-15 of 128 - Name: Monirul, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/206451774/
+(18) Member Name: Susan
 Found country = gb
 Found: code = 17, town = london
-16 of 128 - Name: Susan, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/190320807/
+(19) Member Name: Mark
 Found country = gb
 Found: code = 17, town = london
-17 of 128 - Name: Mark, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/206097936/
+(20) Member Name: Amina
 Found country = gb
 Found: code = 17, town = london
-18 of 128 - Name: Amina, Zip code: london
-Found country = gb
-Found: code = 17, town = london
-19 of 128 - Name: Tye, Zip code: london
-Found country = gb
-Found: code = 17, town = london
-20 of 128 - Name: Victor, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = 
 Fetching the next page ...
-http://www.meetup.com/Turning-to-Complexity-Beta/members/?offset=20&;sort=last_visited&;desc=1
+  Link is: http://www.meetup.com/Turning-to-Complexity-Beta/members/?offset=20&;sort=last_visited&;desc=1
+http://www.meetup.com/Turning-to-Complexity-Beta/members/26254742/
+(21) Member Name: Tye
 Found country = gb
 Found: code = 17, town = london
-21 of 128 - Name: YOUSHA, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/8649239/
+(22) Member Name: Victor
 Found country = gb
 Found: code = 17, town = london
-22 of 128 - Name: Jessie, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/193599291/
+(23) Member Name: YOUSHA
 Found country = gb
 Found: code = 17, town = london
-23 of 128 - Name: lookman, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/38240462/
+(24) Member Name: Jessie
 Found country = gb
 Found: code = 17, town = london
-24 of 128 - Name: Rich, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/200765163/
+(25) Member Name: lookman
+Found country = gb
+Found: code = 17, town = london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/205639954/
+(26) Member Name: Rich
+Found country = gb
+Found: code = 17, town = london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/205622985/
+(27) Member Name: Alasdair
 Found country = gb
 Found: code = greater_london, town = "><span class="locality" itemprop="addressLocality">Greater London<
-25 of 128 - Name: Alasdair, Zip code: "><span class="locality" itemprop="addressLocality">Greater London<
+Can't find coords of country = "gb", town = ""><span class="locality" itemprop="addressLocality">Greater London<"
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/205455677/
+(28) Member Name: Louise
 Found country = gb
 Found: code = 17, town = london
-26 of 128 - Name: Louise, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/123693482/
+(29) Member Name: John
 Found country = gb
 Found: code = 17, town = london
-27 of 128 - Name: John, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/4296538/
+(30) Member Name: rmitra
 Found country = gb
 Found: code = 17, town = london
-28 of 128 - Name: rmitra, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/197483674/
+(31) Member Name: Vilius
 Found country = be
 Don't know country "be"
-29 of 128 - Name: Vilius, Zip code: 
-Adding  to dictionary
+Can't parse that location
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/14414638/
+(32) Member Name: ypercube
 Found country = gr
 Don't know country "gr"
-30 of 128 - Name: ypercube, Zip code: 
+Can't parse that location
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/15001991/
+(33) Member Name: Samuele
 Found country = gb
 Found: code = 17, town = london
-31 of 128 - Name: Samuele, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/12099197/
+(34) Member Name: Adam
 Found country = gb
 Found: code = 17, town = london
-32 of 128 - Name: Adam, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/5557975/
+(35) Member Name: Vincent
 Found country = gb
 Found: code = 17, town = london
-33 of 128 - Name: Vincent, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/202093033/
+(36) Member Name: Micheal
 Found country = gb
 Found: code = 17, town = london
-34 of 128 - Name: Micheal, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/96847292/
+(37) Member Name: Dil
 Found country = gb
 Found: code = 17, town = london
-35 of 128 - Name: Dil, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/10747156/
+(38) Member Name: tom
 Found country = gb
 Found: code = 17, town = london
-36 of 128 - Name: tom, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/34681642/
+(39) Member Name: Iain
 Found country = gb
 Found: code = 17, town = kew
-37 of 128 - Name: Iain, Zip code: kew
-Adding kew to dictionary
+Address: Kew, London Borough of Richmond upon Thames, London, Greater London, England, UK
+Coords:  <coordinates>-0.2919291,51.4806629,0.0</coordinates>
+Adding meetup.com/cities/17/kew/ to dictionary
+country=gb, town=kew, zipcode=, address=Kew, London Borough of Richmond upon Thames, London, Greater London, England, UK, coords=<coordinates>-0.2919291,51.4806629,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/43308862/
+(40) Member Name: Aamer
 Found country = gb
 Found: code = 17, town = london
-38 of 128 - Name: Aamer, Zip code: london
-Found country = gb
-Found: code = 17, town = london
-39 of 128 - Name: Michael, Zip code: london
-Found country = gb
-Found: code = 17, town = london
-40 of 128 - Name: Jeff, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = 
 Fetching the next page ...
-http://www.meetup.com/Turning-to-Complexity-Beta/members/?offset=40&;sort=last_visited&;desc=1
+  Link is: http://www.meetup.com/Turning-to-Complexity-Beta/members/?offset=40&;sort=last_visited&;desc=1
+http://www.meetup.com/Turning-to-Complexity-Beta/members/97325212/
+(41) Member Name: Michael
+Found country = gb
+Found: code = 17, town = london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/145022882/
+(42) Member Name: Jeff
+Found country = gb
+Found: code = 17, town = london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/202984762/
+(43) Member Name: Isobel
 Found country = gb
 Found: code = greater_london, town = "><span class="locality" itemprop="addressLocality">Greater London<
-41 of 128 - Name: Isobel, Zip code: "><span class="locality" itemprop="addressLocality">Greater London<
+Can't find coords of country = "gb", town = ""><span class="locality" itemprop="addressLocality">Greater London<"
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/184767232/
+(44) Member Name: jacqueline
 Found country = gb
 Found: code = 17, town = london
-42 of 128 - Name: jacqueline, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/7681445/
+(45) Member Name: Val
 Found country = gb
 Found: code = 17, town = london
-43 of 128 - Name: Val, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/194250297/
+(46) Member Name: Evelina
 Found country = gb
 Found: code = 17, town = london
-44 of 128 - Name: Evelina, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/203505718/
+(47) Member Name: A
 Found country = gb
 Found: code = 17, town = london
-45 of 128 - Name: A, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/11888381/
+(48) Member Name: Jing
 Found country = gb
 Found: code = 17, town = london
-46 of 128 - Name: Jing, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/201743685/
+(49) Member Name: Dario
 Found country = gb
 Found: code = 17, town = london
-47 of 128 - Name: Dario, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/203412242/
+(50) Member Name: MichaelChee
 Found country = gb
 Found: code = 17, town = london
-48 of 128 - Name: MichaelChee, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/12391814/
+(51) Member Name: Rob
 Found country = gb
 Found: code = 17, town = london
-49 of 128 - Name: Rob, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/182594127/
+(52) Member Name: Adam
 Found country = gb
 Found: code = 17, town = london
-50 of 128 - Name: Adam, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/172402772/
+(53) Member Name: Damir
 Found country = gb
 Found: code = 17, town = london
-51 of 128 - Name: Damir, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/5662273/
+(54) Member Name: Gareth
 Found country = gb
 Found: code = 17, town = london
-52 of 128 - Name: Gareth, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/184930268/
+(55) Member Name: Philip
 Found country = gb
 Found: code = 17, town = london
-53 of 128 - Name: Philip, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/23642391/
+(56) Member Name: Jeremy
 Found country = gb
 Found: code = 17, town = london
-54 of 128 - Name: Jeremy, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/195845459/
+(57) Member Name: Lloyd
 Found country = gb
 Found: code = london, town = "><span class="locality" itemprop="addressLocality">London<
-55 of 128 - Name: Lloyd, Zip code: "><span class="locality" itemprop="addressLocality">London<
-Adding "><span class="locality" itemprop="addressLocality">London< to dictionary
+Can't find coords of country = "gb", town = ""><span class="locality" itemprop="addressLocality">London<"
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/193794458/
+(58) Member Name: Jenny
 Found country = gb
 Found: code = 17, town = london
-56 of 128 - Name: Jenny, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/8890889/
+(59) Member Name: Jennifer
 Found country = gb
 Found: code = 17, town = london
-57 of 128 - Name: Jennifer, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/91806042/
+(60) Member Name: Sen
 Found country = au
 Don't know country "au"
-58 of 128 - Name: Sen, Zip code: 
+Can't parse that location
+TOP OF MAIN LOOP: mem_link = 
+Fetching the next page ...
+  Link is: http://www.meetup.com/Turning-to-Complexity-Beta/members/?offset=60&;sort=last_visited&;desc=1
+http://www.meetup.com/Turning-to-Complexity-Beta/members/44121462/
+(61) Member Name: Mark
 Found country = gb
 Found: code = 17, town = london
-59 of 128 - Name: Mark, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/141448642/
+(62) Member Name: Priank
 Found country = gb
 Found: code = f8, town = luton
-60 of 128 - Name: Priank, Zip code: luton
-Adding luton to dictionary
-Fetching the next page ...
-http://www.meetup.com/Turning-to-Complexity-Beta/members/?offset=60&;sort=last_visited&;desc=1
+Address: Luton, East of England, England, UK
+Coords:  <coordinates>-0.42303030762,51.89107295,0.0</coordinates>
+Adding meetup.com/cities/f8/luton/ to dictionary
+country=gb, town=luton, zipcode=, address=Luton, East of England, England, UK, coords=<coordinates>-0.42303030762,51.89107295,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/90911222/
+(63) Member Name: Martin
 Found country = gb
 Found: code = a5, town = luton
-61 of 128 - Name: Martin, Zip code: luton
+Address: Luton, East of England, England, UK
+Coords:  <coordinates>-0.42303030762,51.89107295,0.0</coordinates>
+Adding meetup.com/cities/a5/luton/ to dictionary
+country=gb, town=luton, zipcode=, address=Luton, East of England, England, UK, coords=<coordinates>-0.42303030762,51.89107295,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/189680817/
+(64) Member Name: Jon
 Found country = gb
 Found: code = 17, town = london
-62 of 128 - Name: Jon, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/173173402/
+(65) Member Name: Michele
 Found country = ie
 Don't know country "ie"
-63 of 128 - Name: Michele, Zip code: 
+Can't parse that location
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/13445385/
+(66) Member Name: Danny
 Found country = gb
 Found: code = 17, town = london
-64 of 128 - Name: Danny, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/198327796/
+(67) Member Name: Juan
 Found country = es
 Don't know country "es"
-65 of 128 - Name: Juan, Zip code: 
+Can't parse that location
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/201842025/
+(68) Member Name: Mahmoud
 Found country = gb
 Found: code = poplar, town = "><span class="locality" itemprop="addressLocality">Poplar<
-66 of 128 - Name: Mahmoud, Zip code: "><span class="locality" itemprop="addressLocality">Poplar<
-Adding "><span class="locality" itemprop="addressLocality">Poplar< to dictionary
+Can't find coords of country = "gb", town = ""><span class="locality" itemprop="addressLocality">Poplar<"
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/148039392/
+(69) Member Name: Charles
 Found country = gb
 Found: code = london, town = "><span class="locality" itemprop="addressLocality">London<
-67 of 128 - Name: Charles, Zip code: "><span class="locality" itemprop="addressLocality">London<
+Can't find coords of country = "gb", town = ""><span class="locality" itemprop="addressLocality">London<"
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/200213294/
+(70) Member Name: Pat
 Found country = gb
 Found: code = 17, town = london
-68 of 128 - Name: Pat, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/200121218/
+(71) Member Name: Sakshi
 Found country = gb
 Found: code = 17, town = london
-69 of 128 - Name: Sakshi, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/199921614/
+(72) Member Name: Christopher
 Found country = gb
 Found: code = h9, town = london
-70 of 128 - Name: Christopher, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+Adding meetup.com/cities/h9/london/ to dictionary
+country=gb, town=london, zipcode=, address=London, Greater London, England, UK, coords=<coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/118362582/
+(73) Member Name: Susan
 Found country = gb
 Found: code = 17, town = london
-71 of 128 - Name: Susan, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/72264492/
+(74) Member Name: Valentin
 Found country = gb
 Found: code = g5, town = bromley
-72 of 128 - Name: Valentin, Zip code: bromley
-Adding bromley to dictionary
+Address: Bromley, London, Greater London, England, UK
+Coords:  <coordinates>0.0148142,51.4028046,0.0</coordinates>
+Adding meetup.com/cities/g5/bromley/ to dictionary
+country=gb, town=bromley, zipcode=, address=Bromley, London, Greater London, England, UK, coords=<coordinates>0.0148142,51.4028046,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/195941539/
+(75) Member Name: Dafni
 Found country = gb
 Found: code = 17, town = london
-73 of 128 - Name: Dafni, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/189465619/
+(76) Member Name: Cecilia
 Found country = gb
 Found: code = 17, town = london
-74 of 128 - Name: Cecilia, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/199378132/
+(77) Member Name: Katie
 Found country = gb
 Found: code = 17, town = london
-75 of 128 - Name: Katie, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/199173185/
+(78) Member Name: SILVIA
 Found country = gb
 Found: code = greater_london, town = "><span class="locality" itemprop="addressLocality">Greater London<
-76 of 128 - Name: SILVIA, Zip code: "><span class="locality" itemprop="addressLocality">Greater London<
+Can't find coords of country = "gb", town = ""><span class="locality" itemprop="addressLocality">Greater London<"
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/190787135/
+(79) Member Name: Zerin
 Found country = gb
 Found: code = 17, town = london
-77 of 128 - Name: Zerin, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/198920536/
+(80) Member Name: David
 Found country = gb
 Found: code = 17, town = london
-78 of 128 - Name: David, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = 
+Fetching the next page ...
+  Link is: http://www.meetup.com/Turning-to-Complexity-Beta/members/?offset=80&;sort=last_visited&;desc=1
+http://www.meetup.com/Turning-to-Complexity-Beta/members/38641122/
+(81) Member Name: Tony
 Found country = gb
 Found: code = 17, town = perivale
-79 of 128 - Name: Tony, Zip code: perivale
-Adding perivale to dictionary
+Address: Perivale, Chilham Close, Perivale, London Borough of Ealing, London, Greater London, England, UB6 7FD, UK
+Coords:  <coordinates>-0.3234626,51.536609,0.0</coordinates>
+Adding meetup.com/cities/17/perivale/ to dictionary
+country=gb, town=perivale, zipcode=, address=Perivale, Chilham Close, Perivale, London Borough of Ealing, London, Greater London, England, UB6 7FD, UK, coords=<coordinates>-0.3234626,51.536609,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/198775422/
+(82) Member Name: SEANDENNIS
 Found country = gb
 Found: code = 17, town = london
-80 of 128 - Name: SEANDENNIS, Zip code: london
-Fetching the next page ...
-http://www.meetup.com/Turning-to-Complexity-Beta/members/?offset=80&;sort=last_visited&;desc=1
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/101485262/
+(83) Member Name: Binoy
 Found country = gb
 Found: code = 17, town = london
-81 of 128 - Name: Binoy, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/198381756/
+(84) Member Name: Lubna
 Found country = gb
 Found: code = 17, town = london
-82 of 128 - Name: Lubna, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/152625232/
+(85) Member Name: Nelis
 Found country = gb
 Found: code = y8, town = whitton
-83 of 128 - Name: Nelis, Zip code: whitton
-Adding whitton to dictionary
+Address: Whitton, London Borough of Richmond upon Thames, London, Greater London, England, UK
+Coords:  <coordinates>-0.3579758,51.4511693,0.0</coordinates>
+Adding meetup.com/cities/y8/whitton/ to dictionary
+country=gb, town=whitton, zipcode=, address=Whitton, London Borough of Richmond upon Thames, London, Greater London, England, UK, coords=<coordinates>-0.3579758,51.4511693,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/9885685/
+(86) Member Name: john
 Found country = gb
 Found: code = 17, town = london
-84 of 128 - Name: john, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/9555023/
+(87) Member Name: Nick
 Found country = gb
 Found: code = 17, town = london
-85 of 128 - Name: Nick, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/197807914/
+(88) Member Name: MrAnonyMouse
 Found country = gb
 Found: code = poplar, town = "><span class="locality" itemprop="addressLocality">Poplar<
-86 of 128 - Name: MrAnonyMouse, Zip code: "><span class="locality" itemprop="addressLocality">Poplar<
+Can't find coords of country = "gb", town = ""><span class="locality" itemprop="addressLocality">Poplar<"
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/89356002/
+(89) Member Name: Will
 Found country = nz
 Don't know country "nz"
-87 of 128 - Name: Will, Zip code: 
+Can't parse that location
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/47786692/
+(90) Member Name: Alex
 Found country = gb
 Found: code = 03, town = calcot
-88 of 128 - Name: Alex, Zip code: calcot
-Adding calcot to dictionary
+Address: Calcot, Theale, West Berkshire, South East, England, UK
+Coords:  <coordinates>-1.0520248,51.441795,0.0</coordinates>
+Adding meetup.com/cities/03/calcot/ to dictionary
+country=gb, town=calcot, zipcode=, address=Calcot, Theale, West Berkshire, South East, England, UK, coords=<coordinates>-1.0520248,51.441795,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/13382295/
+(91) Member Name: Easi
 Found country = gb
 Found: code = 17, town = london
-89 of 128 - Name: Easi, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/196839813/
+(92) Member Name: Arun
 Found country = gb
 Found: code = 17, town = london
-90 of 128 - Name: Arun, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/4596124/
+(93) Member Name: Alan
 Found country = gb
 Found: code = greater_london, town = "><span class="locality" itemprop="addressLocality">Greater London<
-91 of 128 - Name: Alan, Zip code: "><span class="locality" itemprop="addressLocality">Greater London<
+Can't find coords of country = "gb", town = ""><span class="locality" itemprop="addressLocality">Greater London<"
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/122037922/
+(94) Member Name: Mic100
 Found country = fr
 Don't know country "fr"
-92 of 128 - Name: Mic100, Zip code: 
+Can't parse that location
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/196348907/
+(95) Member Name: antonio
 Found country = gb
 Found: code = 17, town = london
-93 of 128 - Name: antonio, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/110039162/
+(96) Member Name: Greg
 Found country = gb
 Found: code = 17, town = london
-94 of 128 - Name: Greg, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/51700432/
+(97) Member Name: Has
 Found country = gb
 Found: code = e4, town = ilford
-95 of 128 - Name: Has, Zip code: ilford
-Adding ilford to dictionary
+Address: Ilford, London, Greater London, England, UK
+Coords:  <coordinates>0.0711669,51.5582734,0.0</coordinates>
+Adding meetup.com/cities/e4/ilford/ to dictionary
+country=gb, town=ilford, zipcode=, address=Ilford, London, Greater London, England, UK, coords=<coordinates>0.0711669,51.5582734,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/183057928/
+(98) Member Name: So
 Found country = gb
 Found: code = 17, town = london
-96 of 128 - Name: So, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/65495402/
+(99) Member Name: Joël
 Found country = gb
 Found: code = 17, town = london
-97 of 128 - Name: Joël, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/14217894/
+(100) Member Name: Sally
 Found country = gb
 Found: code = 17, town = london
-98 of 128 - Name: Sally, Zip code: london
-Found country = gb
-Found: code = 17, town = london
-99 of 128 - Name: Mikhail, Zip code: london
-Found country = gb
-Found: code = 17, town = london
-100 of 128 - Name: Natalia, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = 
 Fetching the next page ...
-http://www.meetup.com/Turning-to-Complexity-Beta/members/?offset=100&;sort=last_visited&;desc=1
+  Link is: http://www.meetup.com/Turning-to-Complexity-Beta/members/?offset=100&;sort=last_visited&;desc=1
+http://www.meetup.com/Turning-to-Complexity-Beta/members/193451076/
+(101) Member Name: Mikhail
 Found country = gb
 Found: code = 17, town = london
-101 of 128 - Name: Saumil, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/178974272/
+(102) Member Name: Natalia
 Found country = gb
 Found: code = 17, town = london
-102 of 128 - Name: Tariq, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/195252176/
+(103) Member Name: Saumil
+Found country = gb
+Found: code = 17, town = london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/51993892/
+(104) Member Name: Tariq
+Found country = gb
+Found: code = 17, town = london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/193033421/
+(105) Member Name: Nasir
 Found country = gb
 Found: code = e2, town = frant
-103 of 128 - Name: Nasir, Zip code: frant
-Adding frant to dictionary
+Address: Frant, East Sussex, South East, England, UK
+Coords:  <coordinates>0.2691684,51.0942674,0.0</coordinates>
+Adding meetup.com/cities/e2/frant/ to dictionary
+country=gb, town=frant, zipcode=, address=Frant, East Sussex, South East, England, UK, coords=<coordinates>0.2691684,51.0942674,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/118996062/
+(106) Member Name: ludo
 Found country = gb
 Found: code = 17, town = london
-104 of 128 - Name: ludo, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/195179989/
+(107) Member Name: Fendada
 Found country = gb
 Found: code = 17, town = london
-105 of 128 - Name: Fendada, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/175619272/
+(108) Member Name: Lyndsay
 Found country = gb
 Found: code = 17, town = london
-106 of 128 - Name: Lyndsay, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/70628432/
+(109) Member Name: elvia
 Found country = gb
 Found: code = 17, town = london
-107 of 128 - Name: elvia, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/134841082/
+(110) Member Name: Silvia
 Found country = gb
 Found: code = 17, town = london
-108 of 128 - Name: Silvia, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/142338682/
+(111) Member Name: Marie-Estelle
 Found country = gb
 Found: code = 17, town = london
-109 of 128 - Name: Marie-Estelle, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/195054182/
+(112) Member Name: ilona
 Found country = gb
 Found: code = 17, town = london
-110 of 128 - Name: ilona, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/194985210/
+(113) Member Name: Malika-Zaynah
 Found country = gb
 Found: code = 17, town = london
-111 of 128 - Name: Malika-Zaynah, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/13572042/
+(114) Member Name: Olivier
 Found country = gb
 Found: code = 17, town = london
-112 of 128 - Name: Olivier, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/430840/
+(115) Member Name: ruth.catlow
 Found country = gb
 Found: code = 17, town = london
-113 of 128 - Name: ruth.catlow, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/123807282/
+(116) Member Name: bill
 Found country = gb
 Found: code = 17, town = london
-114 of 128 - Name: bill, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/194827766/
+(117) Member Name: Kathleen
 Found country = gb
 Found: code = 17, town = london
-115 of 128 - Name: Kathleen, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/89631162/
+(118) Member Name: Helen
 Found country = gb
 Found: code = 17, town = london
-116 of 128 - Name: Helen, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/43066262/
+(119) Member Name: Paul
 Found country = gb
 Found: code = 17, town = london
-117 of 128 - Name: Paul, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/129485522/
+(120) Member Name: Oliver
 Found country = gb
 Found: code = 17, town = london
-118 of 128 - Name: Oliver, Zip code: london
-Found country = gb
-Found: code = 17, town = london
-119 of 128 - Name: Lewis, Zip code: london
-Found country = gb
-Found: code = 17, town = london
-120 of 128 - Name: C, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = 
 Fetching the next page ...
-http://www.meetup.com/Turning-to-Complexity-Beta/members/?offset=120&;sort=last_visited&;desc=1
+  Link is: http://www.meetup.com/Turning-to-Complexity-Beta/members/?offset=120&;sort=last_visited&;desc=1
+http://www.meetup.com/Turning-to-Complexity-Beta/members/183779530/
+(121) Member Name: Lewis
 Found country = gb
 Found: code = 17, town = london
-121 of 128 - Name: Neil, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/184000216/
+(122) Member Name: C
 Found country = gb
 Found: code = 17, town = london
-122 of 128 - Name: Tomasz, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/75321842/
+(123) Member Name: Neil
 Found country = gb
 Found: code = 17, town = london
-123 of 128 - Name: Carl, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/98266152/
+(124) Member Name: Tomasz
 Found country = gb
 Found: code = 17, town = london
-124 of 128 - Name: Sean, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/19347771/
+(125) Member Name: Carl
 Found country = gb
 Found: code = 17, town = london
-125 of 128 - Name: John, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/14508857/
+(126) Member Name: Sean
 Found country = gb
 Found: code = 17, town = london
-126 of 128 - Name: Rohit, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/3967441/
+(127) Member Name: John
 Found country = gb
 Found: code = 17, town = london
-127 of 128 - Name: Louis, Zip code: london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/70402542/
+(128) Member Name: Rohit
 Found country = gb
 Found: code = 17, town = london
-128 of 128 - Name: brian, Zip code: london
-Actually processed 128 members
-Don't know zip code: ""
-zip = bromley, coord = <coordinates>0.0148142,51.4028046,0.0</coordinates>
-zip = ilford, coord = <coordinates>0.0711669,51.5582734,0.0</coordinates>
-zip = calcot, coord = <coordinates>-1.0520248,51.441795,0.0</coordinates>
-zip = luton, coord = <coordinates>-0.42303030762,51.89107295,0.0</coordinates>
-zip = whitton, coord = <coordinates>-0.3579758,51.4511693,0.0</coordinates>
-Don't know zip code: "south_croydon"
-Don't know zip code: ""><span class="locality" itemprop="addressLocality">London<"
-Don't know zip code: ""><span class="locality" itemprop="addressLocality">Greater London<"
-zip = london, coord = <coordinates>-0.1276473,51.5073219,0.0</coordinates>
-zip = frant, coord = <coordinates>0.2691684,51.0942674,0.0</coordinates>
-zip = kew, coord = <coordinates>-0.2919291,51.4806629,0.0</coordinates>
-zip = perivale, coord = <coordinates>-0.3234626,51.536609,0.0</coordinates>
-Don't know zip code: ""><span class="locality" itemprop="addressLocality">Poplar<"
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/183869092/
+(129) Member Name: Louis
+Found country = gb
+Found: code = 17, town = london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+TOP OF MAIN LOOP: mem_link = http://www.meetup.com/Turning-to-Complexity-Beta/members/4593180/
+(130) Member Name: brian
+Found country = gb
+Found: code = 17, town = london
+Address: London, Greater London, England, UK
+Coords:  <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+Expected to find 130 members
+Read pages for   130 members
+Found coords for 110 members
 Writing the dictionary to: Turning-to-Complexity-Beta.dic
 Done!

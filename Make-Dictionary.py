@@ -68,6 +68,7 @@ def get_coords(country, town, zipcode, extra):
     geolocator = Nominatim()
     lat = None
     lon = None
+    address = ''
 
     # We are given: country, town, and zipcode (some of which are blank)
 
@@ -79,27 +80,30 @@ def get_coords(country, town, zipcode, extra):
             lon = z.longitude
         except:
             print('We have a zipcode: %s, but it\'s not in the database')
-            return('')
+            return('','')
 
     # Otherwise, we hope to have both country and town names
     elif country != '' and town != '':
         try:
-            location = geolocator.geocode(zipcode)
+            location = geolocator.geocode(town + ', ' + country)
             lat = location.latitude
             lon = location.longitude
+            address = location.address
             coords = '<coordinates>%s,%s,0.0</coordinates>'%(lon, lat)
         except:
             print('Can\'t find coords of country = "%s", town = "%s"'\
                 %(country, town))
-            return('')
+            return('','')
 
     else:
         print('Can\'t parse that location')
-        return('')
+        return('','')
 
     coords = '<coordinates>%s,%s,0.0</coordinates>'%(lon, lat)
-    print(coords)
-    return(coords)             
+    try: print('Address: %s'%address)
+    except: print('(Encoding problem printing address?)')
+    print('Coords:  %s'%coords)
+    return(address, coords)             
 
 #
 # Function for processing a single member page
@@ -112,6 +116,7 @@ def get_member_name(mem_page):
     return(mem_page, first_name)
 
 def get_member_location(mem_page):
+    code = ''
     country = ''
     town = ''
     zipcode = ''
@@ -141,23 +146,28 @@ def get_member_location(mem_page):
     return(mem_page, country, town, zipcode, extra)
 
 def do_member(mem_page):
+    global n_members_located
+
     # Get the member's display name
     mem_page, member_name = get_member_name(mem_page)
+    print('(%s) Member Name: %s'%(n_members_read+1, member_name))
 
     # Get the member's location
     mem_page, country, town, zipcode, extra \
         = get_member_location(mem_page)
 
     # Attempt to map the location to geographics coordinates
-    coords = get_coords(country, town, zipcode, extra)
+    address, coords = get_coords(country, town, zipcode, extra)
 
+    # Don't go any further unless we actually found the coordinates
+    if coords == '': return
+    
+    n_members_located += 1
     # Add everything to the database
     key = extra
     if member_dictionary.get(key) == None:
         print('Adding %s to dictionary'%key)
-        print('country=%s, town=%s, zipcode=%s, coords=%s'\
-            %(country, town, zipcode, coords))
-        location = [country, town, zipcode, coords]
+        location = [country, town, zipcode, address, coords]
         people = []
         member_dictionary[key] = [location, people]
    
@@ -170,7 +180,7 @@ def do_member(mem_page):
 #
 
 def main(argv):
-    global page, n_member_total, n_members_read, n_members_located, next_link
+    global page, n_member_total, n_members_read, next_link
 
     if len(argv) != 2:
         print('Usage: %s meetup-group-name'%argv[0])
@@ -205,7 +215,9 @@ def main(argv):
         # If there isn't one, try to fetch the next members page
         if mem_link == '':
             print('Fetching the next page ...')
-            page = next_link%n_members_read
+            nplink = next_link%n_members_read
+            page = get_page(nplink)
+            print('  Link is: %s'%nplink)
             page, mem_link \
                 = locate_and_extract(page, 'mem-photo', 'href="', '"')
             print(mem_link)
@@ -220,8 +232,9 @@ def main(argv):
         n_members_read += 1
         if n_members_read == n_members_total: break
 
-    print('Read pages for %s members' %n_members_read)
-    print('Found locations for %s members' %n_members_located)
+    print('Expected to find %s members'%n_members_total)
+    print('Read pages for   %s members' %n_members_read)
+    print('Found coords for %s members' %n_members_located)
     dictfile = group_name + '.dic'
     print('Writing the dictionary to: %s'%dictfile)
     f = open(dictfile, 'w')

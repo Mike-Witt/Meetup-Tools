@@ -1,0 +1,23 @@
+
+Things to do: 
+
+* When I run the M&S group I get what look like US zip codes in France, etc.
+  So this is definitely not working right. MIGHT BE FIXED????
+
+* Do the geo lookups in just one place. Probably make-dic
+
+* Geo lookups when the location first goes in the dict [DONE?]
+
+* Is there some way to explicitly feed the country code to geopy?
+
+STATUS:
+
+    Make-Dictionary.py / Read-Dictionary.py - APPEAR to be working
+    NEXT: Update Make-Map (LOTS of changes!)
+
+NAMES:
+
+Denver-Physics-Philosophy-Meetup
+Quantum-Physics-Meetup-Group
+Turning-to-Complexity-Beta
+
