@@ -157,8 +157,13 @@ def do_member(mem_page):
         print('Adding %s to dictionary'%key)
         print('country=%s, town=%s, zipcode=%s, coords=%s'\
             %(country, town, zipcode, coords))
-        member_dictionary[key] = [country, town, zipcode, coords]
-    member_dictionary[key] += [ member_name, ]
+        location = [country, town, zipcode, coords]
+        people = []
+        member_dictionary[key] = [location, people]
+   
+    location, people = member_dictionary[key] 
+    people += [ member_name, ]
+    member_dictionary[key] = [location, people]
 
 #
 # The mainline code is here
