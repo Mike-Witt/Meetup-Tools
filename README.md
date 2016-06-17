@@ -29,3 +29,7 @@ For groups that have members ONLY in US zip codes, this is faster:
 ## Things to do before this is at all ready to use:
 * Do the geo lookups in just one place. Probably make-dic
 * Geo lookups when the location first goes in the dict
+* When I run the M&S group I get what look like US zip codes in France, etc.
+  So this is definitely not working right. In any event I should be adding 
+  the country after the town or zipcode. Perhaps even use the zip db when 
+  it's a zip.
