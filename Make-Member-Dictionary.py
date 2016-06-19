@@ -5,12 +5,13 @@
 #
 
 from pickle import dump
-from sys import argv
+from sys import argv, stdout
 from mtlib import get_page, locate_and_extract
 
 def do_member(mem_link, member_dictionary):
     # We'll use the (string) member number as the key to the dictionary
     member_number = mem_link.split('/')[-2]
+    print('Member: %s,'%member_number),
    
     # Get the member's page 
     mem_page = get_page(mem_link)
@@ -18,15 +19,26 @@ def do_member(mem_link, member_dictionary):
     # Get their first name
     mem_page, first_name = \
         locate_and_extract(mem_page, '<head>', '<title>', ' ')
+    print('name: %s,'%first_name),
+
+    SCHEMA = 'http://schema.org/'
+    mem_page, schema = \
+        locate_and_extract(mem_page, 'Location:', SCHEMA, '">')
+    print('schema: %s,'%(SCHEMA + schema)),
 
     PREFIX = 'http://www.meetup.com/'
     # Get their location
     mem_page, loc = \
-        locate_and_extract(mem_page, 'Location:', PREFIX, '">')
+        locate_and_extract(mem_page, 'href', PREFIX, '">')
     location = PREFIX + loc
+
     member_dictionary[member_number] = [first_name, location] 
-    print('Member: %s, first name: %s, location: %s'
-        %(member_number, first_name, location))
+    print('location: %s'%location)
+
+    stdout.flush() 
+    if schema != 'PostalAddress':
+        print('ERROR: Schema was not "PostalAddress"')
+        exit(0)
     
 def make_member_dictionary(group_name):
     member_dictionary = {}

@@ -15,6 +15,12 @@ def sort_member(member_info, location_dictionary):
     print('  Name: %s'%name)
     print('  loc:  %s'%location)
 
+    if location_dictionary.get(location) == None:
+        print('Adding %s to the location dictionary'%location)
+        location_dictionary[location] = [ ]
+    location_dictionary[location] += [ name, ]
+    print('  Added %s to location "%s"'%(name, location))
+
 def main(argv):
     if len(argv) != 2:
         print('Usage: %s meetup-group-name'%argv[0])
