@@ -8,6 +8,7 @@ import pickle
 import sys
 from geopy.geocoders import Nominatim
 from pyzipcode import ZipCodeDatabase
+from mtlib import get_page, locate_and_extract
 
 #
 # Global vars
@@ -20,45 +21,6 @@ n_members_read = 0
 n_members_located = 0
 zcdb = ZipCodeDatabase()
 member_dictionary = {}
-
-# locate_and_extract()
-#
-# First skip text until you have read "locator." Then extract the text
-# between "start" and "end" and return it. For example, if you have
-# something like this:
-#
-# <div class="price">
-# <b>Price in dollars: $29.95</b>
-# </div>
-#
-# and you just want the actual number 29.95, you could do:
-# locate_and_extract(page, '<div class="price">', ': $', '</b>')
-#
-def locate_and_extract(page, locator, start, end):
-    try:
-        ptr = page.index(locator)
-        page = page[ptr+len(locator):]
-        ptr = page.index(start)
-        page = page[ptr+len(start):]
-        ptr = page.index(end)
-    except:
-        return('', '')
-    value = page[:ptr]
-    page = page[ptr+len(end):]
-    return(page, value)
-
-# get_page()
-#
-# Return the page specified by "url"
-#
-def get_page(url):
-    import mechanize
-    br = mechanize.Browser()
-    br.set_handle_robots(False)
-    br.set_handle_equiv(False)
-    br.addheaders = [('User-agent', 'Mozilla/5.0')] 
-    response = br.open(url)   
-    return(response.read())
 
 #
 # Attempt to map a location to latitude and longitude.
