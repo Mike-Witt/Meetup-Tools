@@ -6,6 +6,7 @@
 
 from sys import argv
 from pickle import load
+from mtlib import location_dict_item
 
 def main(argv):
     if len(argv) != 2:
@@ -19,6 +20,6 @@ def main(argv):
 
     for item in location_dictionary.items():
         print('Location: %s'%item[0])
-        print('  Members: %s'%item[1])
+        print('  %s'%item[1].show())
 
 main(argv)

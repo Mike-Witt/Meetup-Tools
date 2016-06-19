@@ -7,19 +7,21 @@
 
 from sys import argv
 from pickle import load, dump
+from mtlib import location_dict_item
 
 def sort_member(member_info, location_dictionary):
     name = member_info[0]
     location = member_info[1] 
     print('sort_member:')
-    print('  Name: %s'%name)
-    print('  loc:  %s'%location)
+    print('  name:      %s'%name)
+    print('  location:  %s'%location)
 
     if location_dictionary.get(location) == None:
         print('Adding %s to the location dictionary'%location)
-        location_dictionary[location] = [ ]
-    location_dictionary[location] += [ name, ]
-    print('  Added %s to location "%s"'%(name, location))
+        location_dictionary[location] = location_dict_item()
+    item = location_dictionary[location]
+    item.members += [ name, ]
+    print('  Added member "%s" to location "%s"'%(name, location))
 
 def main(argv):
     if len(argv) != 2:

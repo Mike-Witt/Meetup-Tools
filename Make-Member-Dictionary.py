@@ -28,10 +28,13 @@ def do_member(mem_link, member_dictionary):
 
     PREFIX = 'http://www.meetup.com/'
     # Get their location
-    mem_page, loc = \
+    mem_page, location = \
         locate_and_extract(mem_page, 'href', PREFIX, '">')
-    location = PREFIX + loc
+    if location[:6] != 'cities':
+        print('ERROR: Location for was not ' + PREFIX + 'cities')
+        exit(0)
 
+    location = location[6:]
     member_dictionary[member_number] = [first_name, location] 
     print('location: %s'%location)
 

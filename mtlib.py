@@ -2,6 +2,19 @@
 # Meetup Tools Library
 #
 
+class location_dict_item:
+    def __init__(self):
+        self.country = ''
+        self.city = ''
+        self.zip = ''
+        self.coords = ''
+        self.members = []
+    def show(self):
+        return(
+            'country=%s, city=%s, zip=%s, coords=%s, members=%s'
+            %(self.country, self.city, self.zip, self.coords, self.members)
+        )
+
 # get_page()
 #
 # Return the page specified by "url"
