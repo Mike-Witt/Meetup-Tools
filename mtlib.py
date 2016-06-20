@@ -7,12 +7,14 @@ class location_dict_item:
         self.country = ''
         self.city = ''
         self.zip = ''
-        self.coords = ''
+        self.latitude = ''
+        self.longitude = ''
         self.members = []
     def show(self):
         return(
-            'country=%s, city=%s, zip=%s, coords=%s, members=%s'
-            %(self.country, self.city, self.zip, self.coords, self.members)
+            'country=%s, city=%s, zip=%s, lat=%s, lon=%s, members=%s'
+            %(self.country, self.city, self.zip, self.latitude, 
+              self.longitude, self.members)
         )
 
 # get_page()
