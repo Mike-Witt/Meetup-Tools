@@ -119,6 +119,12 @@ def get_stats(location_dictionary):
 def map_location(location, item):
     lon = item.longitude
     lat = item.latitude
+
+    # Skip this item if we never found the coordinates
+    if lon == '' or lat == '':
+        print('Skipping: %s (%s members)'%(location, len(item.members)))
+        return
+
     members = item.members
     coords = '<coordinates>%s,%s,0.0</coordinates>'%(lon,lat)
 
