@@ -1,0 +1,28 @@
+We should find 22 members
+Member: 163356212, name: William, schema: http://schema.org/PostalAddress, location: /us/80201/
+Member: 185845222, name: Don, schema: http://schema.org/PostalAddress, location: /us/80201/
+Member: 188081404, name: Charlie, schema: http://schema.org/PostalAddress, location: /us/80234/
+Member: 14318117, name: Mike, schema: http://schema.org/PostalAddress, location: /us/80222/
+Member: 14493829, name: Tina, schema: http://schema.org/PostalAddress, location: /us/80222/
+Member: 5596597, name: Dave, schema: http://schema.org/PostalAddress, location: /us/80260/
+Member: 4537169, name: Hank, schema: http://schema.org/PostalAddress, location: /us/80201/
+Member: 205428499, name: Gerald, schema: http://schema.org/PostalAddress, location: /us/80214/
+Member: 203672892, name: Mary, schema: http://schema.org/PostalAddress, location: /us/80301/
+Member: 120907282, name: Kevin, schema: http://schema.org/PostalAddress, location: /us/80901/
+Member: 10831092, name: Karla, schema: http://schema.org/PostalAddress, location: /us/80127/
+Member: 45991572, name: John, schema: http://schema.org/PostalAddress, location: /us/80201/
+Member: 195429869, name: teduren, schema: http://schema.org/PostalAddress, location: /us/80232/
+Member: 189834969, name: Caleb, schema: http://schema.org/PostalAddress, location: /us/80401/
+Member: 4598608, name: Doug, schema: http://schema.org/PostalAddress, location: /us/80439/
+Member: 189190139, name: Thornton, schema: http://schema.org/PostalAddress, location: /us/80127/
+Member: 193424082, name: Anna, schema: http://schema.org/PostalAddress, location: /us/80004/
+Member: 2131284, name: R., schema: http://schema.org/PostalAddress, location: /us/80202/
+Member: 2044035, name: Andy, schema: http://schema.org/PostalAddress, location: /us/80138/
+Member: 2276801, name: Luna, schema: http://schema.org/PostalAddress, location: /us/80401/
+Fetching the next page ...
+  Link is: http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/?offset=20&;sort=last_visited&;desc=1
+http://www.meetup.com/Denver-Physics-Philosophy-Meetup/members/30111022/
+Member: 30111022, name: dennis, schema: http://schema.org/PostalAddress, location: /us/80201/
+Member: 120289672, name: Steve, schema: http://schema.org/PostalAddress, location: /us/80401/
+Expected to find 22 members
+Read pages for   22 members

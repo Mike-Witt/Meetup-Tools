@@ -16,25 +16,21 @@
 <p>
 <li> <b>Make-Member-Dictionary.py</b> group-name
     <br>- Create dictionary with member info and "raw" meetup location string
-    <br>- This is the only code that needs to "scrape" meetup
+    <br>- <b>This is the only code that needs to "scrape" meetup</b>
 <p>
 <li> <b>Make-Location-Dictionary.py</b> group-name
     <br>- Read a member dictionary and write a location dictionary
     <br>- Group members into locations
 <p>
 <li> <b>Find-Locations.py</b> group-name
+    <br>- Does misc processing (eg: "unquote" names with "%" codes)
     <br>- Add geographic coordinates to a location dictionary
-    <br>- This is the only code that needs to access geo databases
-    <br>- Eliminate duplicate locations, merging the members
-    <br>- Example, there are two different "londons"
-    <br>&nbsp;&nbsp; key: meetup.com/cities/17/london/
-    <br>&nbsp;&nbsp; key: meetup.com/cities/h9/london/
-    <br>- I guess, for the time being, I'll merge things that map to the same geo coordinates. But I'll do some intelligent processing on that and have warning messages.
+    <br>- <b>This is the only code that needs to access geo databases</b>
 <p>
 <li> <b>Map-Members.py</b> -flag group-name
     <br>- Read a location dictionary and write a .kml file
-    <br>- This also does the sorting.
-    <br>- SEMI-WORKING but there are some issues ...
+    <br>- This also does the sorting, merges duplicate locations, 
+        and fixes "%" codes in city names (not in that order).
 </ul>
 
 <h2>Names</h2>

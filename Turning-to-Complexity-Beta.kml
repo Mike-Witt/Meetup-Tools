@@ -1,0 +1,215 @@
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+    <Document>
+        <name>No Name</name>
+        <description><![CDATA[]]></description>
+
+        <Folder>
+        <name>Members</name>
+        <Placemark>
+            <name>Location: London, GB (104 members)</name>
+            <description><![CDATA[Gareth<br>Evelina<br>Dario<br>Philip<br>Lorna<br>Silvia<br>Jeff<br>C<br>Saumil<br>Faheem<br>So<br>Sakshi<br>YOUSHA<br>Damir<br>tom<br>Jessie<br>Jon<br>bill<br>Katie<br>Joël<br>Olivier<br>ilona<br>jacqueline<br>Zerin<br>Sara<br>Val<br>Jennifer<br>Susan<br>SEANDENNIS<br>Danny<br>Samuele<br>Nick<br>Fendada<br>John<br>Adam<br>Easi<br>Natalia<br>Monirul<br>Pat<br>Lana<br>Barbara<br>Tariq<br>Adam<br>lookman<br>Rich<br>Vincent<br>Mark<br>Binoy<br>Louise<br>elvia<br>Susan<br>antonio<br>Faheem<br>Amina<br>Malika-Zaynah<br>Monirul<br>rmitra<br>Mark<br>John<br>Neil<br>Arun<br>Greg<br>Rohit<br>Sean<br>Aamer<br>ludo<br>Louis<br>Carl<br>Micheal<br>Helen<br>brian<br>Cecilia<br>Tye<br>Dafni<br>Victor<br>Jenny<br>Lewis<br>Lubna<br>Mikhail<br>ishmael<br>john<br>Julia<br>Daniel<br>MichaelChee<br>A<br>Gloria<br>Dil<br>Tomasz<br>Jing<br>David<br>Oliver<br>Kathleen<br>Duncan<br>Jeremy<br>Rob<br>Stevie<br>Michael<br>Deb<br>Lyndsay<br>Paul<br>Sally<br>Marie-Estelle<br>ruth.catlow<br>Christopher]]></description>
+            <styleUrl>#icon-104</styleUrl>
+            <Point>
+                <coordinates>-0.1276473,51.5073219,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Luton, GB (2 members)</name>
+            <description><![CDATA[Martin<br>Priank]]></description>
+            <styleUrl>#icon-2</styleUrl>
+            <Point>
+                <coordinates>-0.42303030762,51.89107295,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Madrid, ES (1 members)</name>
+            <description><![CDATA[Juan]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>-3.7035824,40.4167047,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Whitton, GB (1 members)</name>
+            <description><![CDATA[Nelis]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>-0.3579758,51.4511693,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Beckenham, GB (1 members)</name>
+            <description><![CDATA[Vince]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>-0.0303182,51.4070938,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Calcot, GB (1 members)</name>
+            <description><![CDATA[Alex]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>-1.0520248,51.441795,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Wellington, NZ (1 members)</name>
+            <description><![CDATA[Will]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>174.7772239,-41.2887638,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Bromley, GB (1 members)</name>
+            <description><![CDATA[Valentin]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>0.0148142,51.4028046,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Perivale, GB (1 members)</name>
+            <description><![CDATA[Tony]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>-0.3234626,51.536609,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Melbourne, AU (1 members)</name>
+            <description><![CDATA[Sen]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>144.9631608,-37.8142175,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Athens, GR (1 members)</name>
+            <description><![CDATA[ypercube]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>23.7279843,37.9841493,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Dublin, IE (1 members)</name>
+            <description><![CDATA[Michele]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>-6.2602731,53.3497645,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Paris, FR (1 members)</name>
+            <description><![CDATA[Mic100]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>2.3514992,48.8566101,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Ilford, GB (1 members)</name>
+            <description><![CDATA[Has]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>0.0711669,51.5582734,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Kew, GB (1 members)</name>
+            <description><![CDATA[Iain]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>-0.2919291,51.4806629,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        <Placemark>
+            <name>Location: Frant, GB (1 members)</name>
+            <description><![CDATA[Nasir]]></description>
+            <styleUrl>#icon-1</styleUrl>
+            <Point>
+                <coordinates>0.2691684,51.0942674,0.0</coordinates>
+            </Point>
+        </Placemark>
+
+        </Folder>
+
+        <Style id='icon-104'>
+            <IconStyle>
+                <color>ff0000ff</color>
+                <scale>1.1</scale>
+                <Icon>
+                    <href>http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png</href>
+                </Icon>
+                <hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+                </hotSpot>
+            </IconStyle>
+            <LabelStyle>
+                <scale>0.0</scale>
+            </LabelStyle>
+        </Style>
+
+        <Style id='icon-9'>
+            <IconStyle>
+                <color>ff4242ff</color>
+                <scale>1.1</scale>
+                <Icon>
+                    <href>http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png</href>
+                </Icon>
+                <hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+                </hotSpot>
+            </IconStyle>
+            <LabelStyle>
+                <scale>0.0</scale>
+            </LabelStyle>
+        </Style>
+
+        <Style id='icon-2'>
+            <IconStyle>
+                <color>ff8484ff</color>
+                <scale>1.1</scale>
+                <Icon>
+                    <href>http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png</href>
+                </Icon>
+                <hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+                </hotSpot>
+            </IconStyle>
+            <LabelStyle>
+                <scale>0.0</scale>
+            </LabelStyle>
+        </Style>
+
+        <Style id='icon-1'>
+            <IconStyle>
+                <color>ffc6c6ff</color>
+                <scale>1.1</scale>
+                <Icon>
+                    <href>http://www.gstatic.com/mapspro/images/stock/960-wht-star-blank.png</href>
+                </Icon>
+                <hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+                </hotSpot>
+            </IconStyle>
+            <LabelStyle>
+                <scale>0.0</scale>
+            </LabelStyle>
+        </Style>
+
+    </Document>
+</kml>

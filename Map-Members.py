@@ -5,6 +5,7 @@
 
 import pickle
 import sys
+import urllib2
 from mtlib import location_dict_item
 
 # This is a dictionary where the key is the number of members and
@@ -134,8 +135,11 @@ def map_location(location, item):
         if n != 0: data += "<br>"
         data += members[n]
 
-    if item.zip != '': loc = item.zip
-    else: loc = item.city
+    if item.zip != '':
+        loc = item.zip
+    else: 
+        loc = item.city[0].upper() + item.city[1:] + ', ' + item.country.upper()
+
     icon_name = str(N)
     kmlline("        <Placemark>")
     kmlline("            <name>Location: %s (%s members)</name>"%(loc, N))
@@ -153,10 +157,62 @@ def get_dict(group_name):
     file.close()
     return(location_dictionary)
 
-def sort_by_number(group_name):
+def merge_locations(location_dictionary, target, source, coords):
+    # Target and source are raw location (indices in the location_dictionary).
+    # Merge all the members from source into target
+    print('  %s and %s have the same geographic coordinates: %s'
+        %(target, source, coords))
+    print('    Merging members from %s into %s and deleting %s'
+        %(source, target, source))
+    target_item = location_dictionary[target]
+    source_item = location_dictionary[source]
+    target_item.members += source_item.members
+    del location_dictionary[source]
+
+def merge_duplicate_locations(location_dictionary):
+    # Build a temporary dictionary indexed by geo coords (as strings)
+    geo_dict = {}
+    # Examine each item in the location dict.
+    for item in location_dictionary.items():
+
+        lon = str(item[1].longitude)
+        lat = str(item[1].latitude)
+        if lat == None: continue
+        if lat == '' : continue
+        if lon == None: continue
+        if lon == '': continue
+
+        key = str(lon) + ',' + str(lat)
+        #if we get a hit, merge the two in the original location dict.
+        if key in geo_dict:
+            merge_locations(location_dictionary, geo_dict[key], item[0], key)
+        # Otherwise add it to the temp dict
+        else:
+            geo_dict[key] = item[0]
+
+def fix_url_quotes(location_dictionary):
+    for item in location_dictionary.items():
+        city = item[1].city
+        if '%' in city:
+            new_city = urllib2.unquote(city)
+            print('  Fixing: %s --> %s'%(city, new_city))
+            item[1].city = new_city
+            location_dictionary[item[0]] = item[1]
+
+def sort_common(group_name):
     location_dictionary = get_dict(group_name)
+
+    print('Eliminating duplicate locations:')
+    merge_duplicate_locations(location_dictionary)
+    print('Fixing city names:')
+    fix_url_quotes(location_dictionary)
+
     get_stats(location_dictionary)
     start_kml(group_name)
+    return(location_dictionary)
+
+def sort_by_location(group_name):
+    location_dictionary = sort_common(group_name)
     for item in sorted(location_dictionary.items()):
         map_location(item[0], item[1])
     end_kml()
@@ -166,10 +222,8 @@ def mykey(x):
     # x[1] is a location_dict_item
     return(len(x[1].members))
 
-def sort_by_location(group_name):
-    location_dictionary = get_dict(group_name)
-    get_stats(location_dictionary)
-    start_kml(group_name)
+def sort_by_number(group_name):
+    location_dictionary = sort_common(group_name)
     for item in sorted(location_dictionary.items(), key=mykey, reverse=True):
          map_location(item[0], item[1])
     end_kml()
