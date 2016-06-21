@@ -6,6 +6,8 @@
 
 import sys
 import pickle
+from time import sleep
+import geopy
 from geopy.geocoders import Nominatim
 from pyzipcode import ZipCodeDatabase
 from mtlib import location_dict_item
@@ -19,11 +21,38 @@ bad_zips = 0
 good_cities = 0
 bad_cities = 0
 
+def dbg(msg):
+    print(msg)
+    sys.stdout.flush()
+
+def geo_lookup(lookup_string):
+    sleep_time = 5
+    # We'll potentially keep trying until we get either the answer or
+    # an error other than timeout, etc.
+    while(True):
+        try:
+            place = geolocator.geocode(lookup_string)
+            return(place)
+        except geopy.exc.GeocoderTimedOut:
+            dbg('GeocoderTimedOut, sleep %s seconds and retry ...'%sleep_time)
+            sleep(sleep_time)
+            continue
+        except geopy.exc.GeocoderUnavailable:
+            dbg('GeocoderUnavailable, sleep %s seconds and retry ...'%sleep_time)
+            sleep(sleep_time)
+            continue
+        except:
+            e = sys.exc_info()[0]
+            dbg(location)
+            dbg('Looking up: %s'%lookup_string);
+            dbg('UNEXPECTED Geocoder error: %s'%e)
+            return(None)
+
 def get_location_info(location, item):
     global n_attempted, n_found, good_zips, bad_zips, good_cities, bad_cities
     #debug
-    #print('Location: %s'%location)
-    #print('item: %s'%item.show())
+    #dbg('Location: %s'%location)
+    #dbg('item: %s'%item.show())
 
     n_attempted += 1
 
@@ -34,11 +63,13 @@ def get_location_info(location, item):
         item.zip = foo[1]
         try: place = zcdb[item.zip]
         except: 
-            print('Can\'t find zip code %s'%item.zip)
+            dbg(location)
+            dbg('Can\'t find zip code %s'%item.zip)
             bad_zips += 1
             return
         if place == None or place == '':
-            print('Can\'t find zip code %s'%item.zip)
+            dbg(location)
+            dbg('Can\'t find zip code %s'%item.zip)
             bad_zips += 1
             return
         item.latitude = place.latitude
@@ -48,20 +79,17 @@ def get_location_info(location, item):
 
     elif item.country == 'gb' or item.country == 'ca':
         if len(foo) != 3:
-            print('Country is %s but we don\'t have a region code'%item.country)
+            dbg(location)
+            dbg('Country is %s but we don\'t have a region code'%item.country)
             bad_cities += 1
             return
         item.city = foo[2] 
         lookup_string = item.city + ', ' + item.country
-        try:
-            place = geolocator.geocode(lookup_string)
-        except:
-            e = sys.exc_info()[0]
-            print('Looking up: %s'%lookup_string);
-            print('Geocoder error: %s'%e)
-            place = None
+        place = geo_lookup(lookup_string)
+
         if place == None or place == '':
-            print('Can\'t find coords of country = "%s", city = "%s"'\
+            dbg(location)
+            dbg('Can\'t find coords of country = "%s", city = "%s"'\
                 %(item.country, item.city))
             bad_cities += 1
             return
@@ -74,21 +102,16 @@ def get_location_info(location, item):
         # So far, it *appears* the countries other than GB, CA and US
         # follow the format /COUNTRY/CITY
         if len(foo) != 2:
-            print('Country is %s. Can\'t parse: %s'
+            dbg('Country is %s. Can\'t parse: %s'
                 %(item.country, location))
             bad_cities += 1
             return
         item.city = foo[1] 
         lookup_string = item.city + ', ' + item.country
-        try:
-            place = geolocator.geocode(lookup_string)
-        except:
-            e = sys.exc_info()[0]
-            print('Looking up: %s'%lookup_string);
-            print('Geocoder error: %s'%e)
-            place = None
+        place = geo_lookup(lookup_string)
+
         if place == None or place == '':
-            print('Can\'t find coords of country = "%s", city = "%s"'\
+            dbg('Can\'t find coords of country = "%s", city = "%s"'\
                 %(item.country, item.city))
             bad_cities += 1
             return
@@ -97,9 +120,42 @@ def get_location_info(location, item):
         good_cities += 1
         n_found += 1
 
+def merge_locations(location_dictionary, target, source, coords):
+    # Target and source are raw location (indices in the location_dictionary).
+    # Merge all the members from source into target
+    dbg('  %s and %s have the same geographic coordinates: %s'
+        %(target, source, coords))
+    dbg('    Merging members from %s into %s and deleting %s'
+        %(source, target, source))
+    target_item = location_dictionary[target]
+    source_item = location_dictionary[source]
+    target_item.members += source_item.members
+    del location_dictionary[source]
+
+def merge_duplicate_locations(location_dictionary):
+    # Build a temporary dictionary indexed by geo coords (as strings)
+    geo_dict = {}
+    # Examine each item in the location dict.
+    for item in location_dictionary.items():
+
+        lon = str(item[1].longitude)
+        lat = str(item[1].latitude)
+        if lat == None: continue
+        if lat == '' : continue
+        if lon == None: continue
+        if lon == '': continue
+
+        key = str(lon) + ',' + str(lat)
+        #if we get a hit, merge the two in the original location dict.
+        if key in geo_dict:
+            merge_locations(location_dictionary, geo_dict[key], item[0], key)
+        # Otherwise add it to the temp dict
+        else:
+            geo_dict[key] = item[0]
+
 def main(argv):
     if len(argv) < 2:
-        print('Usage: %s group-name'%argv[0])
+        dbg('Usage: %s group-name'%argv[0])
         exit(0)
 
     group_name = argv[1]
@@ -117,9 +173,12 @@ def main(argv):
     pickle.dump(location_dictionary, file)
     file.close()
 
-    print('We attempted to process %s locations'%n_attempted)
-    print('We were able to find    %s locations'%n_found)
-    print('Good zips: %s, bad zips: %s'%(good_zips, bad_zips))
-    print('Good cities: %s, bad cities: %s'%(good_cities, bad_cities))
+    dbg('We attempted to process %s locations'%n_attempted)
+    dbg('We were able to find    %s locations'%n_found)
+    dbg('Good zips: %s, bad zips: %s'%(good_zips, bad_zips))
+    dbg('Good cities: %s, bad cities: %s'%(good_cities, bad_cities))
+
+    dbg('Now checking for duplicate locations:')
+    merge_duplicate_locations(location_dictionary)
 
 main(sys.argv)

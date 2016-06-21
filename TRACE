@@ -1,0 +1,59 @@
+/gb/g5/tunbridge_wells/
+Can't find coords of country = "gb", city = "tunbridge_wells"
+/gb/greater_london/
+Country is gb but we don't have a region code
+/gb/f8/stanstead_abbotts/
+Can't find coords of country = "gb", city = "stanstead_abbotts"
+/gb/f8/london_colney/
+Can't find coords of country = "gb", city = "london_colney"
+/gb/e4/woodford_green/
+Can't find coords of country = "gb", city = "woodford_green"
+/gb/b9/high_wycombe/
+Can't find coords of country = "gb", city = "high_wycombe"
+/gb/b7/st_george/
+Can't find coords of country = "gb", city = "st_george"
+/gb/poplar/
+Country is gb but we don't have a region code
+/gb/f8/welwyn_garden_city/
+Can't find coords of country = "gb", city = "welwyn_garden_city"
+/gb/n7/new_malden/
+Can't find coords of country = "gb", city = "new_malden"
+/gb/n7/west_molesey/
+Can't find coords of country = "gb", city = "west_molesey"
+/gb/n7/thornton_heath/
+Can't find coords of country = "gb", city = "thornton_heath"
+/gb/17/hampton_wick/
+Can't find coords of country = "gb", city = "hampton_wick"
+GeocoderTimedOut, sleep 5 seconds and retry ...
+/gb/stratford_/
+Country is gb but we don't have a region code
+/gb/e4/great_leighs/
+Can't find coords of country = "gb", city = "great_leighs"
+/gb/f8/st_albans/
+Can't find coords of country = "gb", city = "st_albans"
+Country is it. Can't parse: /it/mi/milano/
+/gb/f8/bushey_heath/
+Can't find coords of country = "gb", city = "bushey_heath"
+/gb/n7/kingston_upon_thames/
+Can't find coords of country = "gb", city = "kingston_upon_thames"
+/gb/n7/south_croydon/
+Can't find coords of country = "gb", city = "south_croydon"
+Can't find coords of country = "es", city = "puerto_del_rosario"
+Can't find coords of country = "my", city = "johor_bahru"
+/gb/london/
+Country is gb but we don't have a region code
+/us/10065/
+Can't find zip code 10065
+We attempted to process 179 locations
+We were able to find    155 locations
+Good zips: 21, bad zips: 1
+Good cities: 134, bad cities: 23
+Now checking for duplicate locations:
+  /gb/b9/slough/ and /gb/03/slough/ have the same geographic coordinates: -0.5940681,51.5111014
+    Merging members from /gb/03/slough/ into /gb/b9/slough/ and deleting /gb/03/slough/
+  /gb/17/london/ and /gb/h9/london/ have the same geographic coordinates: -0.1276473,51.5073219
+    Merging members from /gb/h9/london/ into /gb/17/london/ and deleting /gb/h9/london/
+  /gb/n7/richmond/ and /gb/17/richmond/ have the same geographic coordinates: -0.3032766,51.4613531
+    Merging members from /gb/17/richmond/ into /gb/n7/richmond/ and deleting /gb/17/richmond/
+  /gb/p6/brighton/ and /gb/e2/brighton/ have the same geographic coordinates: -0.137406,50.8220399
+    Merging members from /gb/e2/brighton/ into /gb/p6/brighton/ and deleting /gb/e2/brighton/
