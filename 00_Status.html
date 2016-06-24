@@ -1,16 +1,16 @@
 <h2>Notes</h2>
 <ul>
-<li> June 23: I'm deleting all the old programes.
+<li> June 23: I'm deleting all the old programs.
     <br>They are all saved in "MeetupSoftware-2016.06.21" in my own
-        "Releases" directory (if not in Github). Same for the old 
+        "Releases" directory and in the github 0.0.0 release.
 </ul>
 
 <h2>Things to do</h2>
 <ul>
-<li> BUG: Kraków, PL, shows up around Manchester GB.
+<li> BUG: Krakow, PL, shows up around Manchester GB.
 <li> Is there some way to <i>explicitly</i> feed the country code to geopy?
-<li> Look at Meetup API in ttd/meetup-code
-<li> Look at "how to use a schema.org postal address" in ttd/maps
+<li> Look at Meetup API in ttd/meetup-code(?)
+<li> Look at "how to use a schema.org postal address" in ttd/maps(?)
 </ul>
 
 <h2>General Scheme</h2>
@@ -20,23 +20,12 @@
     information obtained from meetup, and try different techniques to parse
     it, without having to hit the meetup sites again.
 <p>
-<li> <b>Make-Member-Dictionary.py</b> group-name
-    <br>- Create dictionary with member info and "raw" meetup location string
-    <br>- <b>This is the only code that needs to "scrape" meetup</b>
-<p>
-<li> <b>Make-Location-Dictionary.py</b> group-name
-    <br>- Read a member dictionary and write a location dictionary
-    <br>- Group members into locations
-<p>
-<li> <b>Find-Locations.py</b> group-name
-    <br>- Does misc processing (eg: "unquote" names with "%" codes)
-    <br>- Add geographic coordinates to a location dictionary
-    <br>- <b>This is the only code that needs to access geo databases</b>
-<p>
-<li> <b>Map-Members.py</b> -flag group-name
-    <br>- Read a location dictionary and write a .kml file
-    <br>- This also does the sorting, merges duplicate locations, 
-        and fixes "%" codes in city names (not in that order).
+<li> Right now <b>make-map</b> does everything, based on the flags given it:
+    <br><code>./make-map -D my-group-name</code> basically does everything
+    <br><code>./make-map my-group-name</code>
+        will build everything if the member dict exists
+    <br><code>./make-map -dm my-group-name</code> shows the member dict
+    <br><code>./make-map -dl my-group-name</code> shows the location dict
 </ul>
 
 <h2>Names</h2>
