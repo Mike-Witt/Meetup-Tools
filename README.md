@@ -1,6 +1,6 @@
 # Meetup-Tools
 
-First of all: <font color=red>THIS CODE IS NOT READY FOR USE YET!</font>
+First of all: <b>THIS CODE IS NOT READY FOR USE YET!</b>
 
 But if you want to help me test it out:
 
