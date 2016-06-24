@@ -11,9 +11,15 @@ pip install mechanize
 pip install geopy
 ```
 
-### To a make .kml file for the group called My-Group-Name:
+### To a make .kml file for the group called my-group-name:
 ```
-./Make-Dictionary.py My-Group-Name
-./Make-Map.py -bynum My-Group-Name
+./make-map -D my-group-name
 ```
-Then upload My-Group-Name.kml to Google Maps
+Then upload my-group-name.kml to Google Maps
+
+### Other:
+```
+./make-map my-group-name # will build everything if the member dictionary exists
+./make-map -dm my-group-name # shows the member dictionary
+./make-map -dl my-group-name # shows the location dictionary
+```
