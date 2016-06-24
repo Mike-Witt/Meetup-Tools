@@ -1,17 +1,17 @@
 # Meetup-Tools
 
-First of all: THIS CODE IS NOT READY FOR USE YET!
+First of all: <font color=red>THIS CODE IS NOT READY FOR USE YET!</font>
 
 But if you want to help me test it out:
 
-# Before Using:
+### Before Using:
 ```
 pip install pyzipcode
 pip install mechanize
 pip install geopy
 ```
 
-# To a make .kml file for the group called My-Group-Name:
+### To a make .kml file for the group called My-Group-Name:
 ```
 ./Make-Dictionary.py My-Group-Name
 ./Make-Map.py -bynum My-Group-Name
