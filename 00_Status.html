@@ -1,18 +1,24 @@
+<h2>Notes</h2>
+<ul>
+<li> June 23: I'm deleting all the old programes.
+    <br>They are all saved in "MeetupSoftware-2016.06.21" in my own
+        "Releases" directory (if not in Github). Same for the old 
+</ul>
 
 <h2>Things to do</h2>
 <ul>
+<li> BUG: Kraków, PL, shows up around Manchester GB.
 <li> Is there some way to <i>explicitly</i> feed the country code to geopy?
 <li> Look at Meetup API in ttd/meetup-code
 <li> Look at "how to use a schema.org postal address" in ttd/maps
 </ul>
 
-<h2>New Scheme</h2>
+<h2>General Scheme</h2>
 <ul>
-<li> <b>mtlib.py</b> - Common function and definitions
-<p>
-<li> <b>Dump-Member-Dictionary.py</b> group-name
-    <br><b>Dump-Location-Dictionary.py</b> group-name
-    <br>These two utilities can be used to examine the respective dictionaries.
+<li> The reason for the separate "member dictionary" and "location dictionary"
+    is so that we can (in the member dict) maintain the original form of the
+    information obtained from meetup, and try different techniques to parse
+    it, without having to hit the meetup sites again.
 <p>
 <li> <b>Make-Member-Dictionary.py</b> group-name
     <br>- Create dictionary with member info and "raw" meetup location string
