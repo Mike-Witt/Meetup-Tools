@@ -30,6 +30,10 @@ parser.add_argument('-dl', '--disp_locations', action='store_true',
     help='display a location dictionary')
 parser.add_argument('-D', '--download', action='store_true', 
     help='scrape meetup to download new information')
+parser.add_argument('--make_ldic', action='store_true', 
+    help='make a location dictionary from the member data')
+parser.add_argument('-l', '--leaflet', action='store_true', 
+    help='create a leaflet javascript page')
 parser.add_argument('-d', '--debug_level', type=int,
     help='debug level - higher for more messages')
 
@@ -447,6 +451,28 @@ high_color = 0
 low_color = 200
 
 #
+# These functions assist with creating a leaflet map
+#
+
+def start_leaflet(group_name):
+    global leaflet_page
+    leaflet_page = open(group_name + '.html', 'w')
+    leaflet_start = open('leaflet-start', 'r')
+    leaflet_page.write(leaflet_start.read())
+    leaflet_start.close()
+    
+def leafln(text):
+    global leaflet_page
+    leaflet_page.write(text + '\n')
+
+def end_leaflet():
+    global leaflet_page
+    leaflet_end = open('leaflet-end', 'r')
+    leaflet_page.write(leaflet_end.read())
+    leaflet_end.close()
+    leaflet_page.close()
+
+#
 # These functions are for writing the .kml file
 #
 
@@ -525,7 +551,30 @@ def get_stats(location_dictionary):
         msg += ', color: %s'%color_table[n_members]
         print(msg)
 
-def map_location(location, item):
+def map_location(args, location, item):
+    if args.leaflet: map_location_leaflet(location, item)
+    else: map_location_kml(location, item)
+
+def map_location_leaflet(location, item):
+    lon = item.longitude
+    lat = item.latitude
+    print('map_location_leaflet(): lat=%s, lon=%s' %(lat, lon))
+
+    if item.zip != '':
+        loc = item.zip
+    else: 
+        loc = item.city[0].upper() + item.city[1:] + ', ' + item.country.upper()
+
+    leafln('    L.marker([%s, %s]).addTo(mymap)' %(lat, lon))
+    leafln('        .bindPopup(')
+    #members_string = 'Location: %s'%loc
+    members_string = ''
+    for n in range(len(item.members)):
+        if n != 0: members_string += '<br>'
+        members_string += '%s'%item.members[n]
+    leafln('            "%s")' %members_string)
+
+def map_location_kml(location, item):
     lon = item.longitude
     lat = item.latitude
 
@@ -601,7 +650,7 @@ def fix_url_quotes(location_dictionary):
             item[1].city = new_city
             location_dictionary[item[0]] = item[1]
 
-def sort_common(group_name):
+def sort_common(args, group_name):
     location_dictionary = read_dict(group_name + '.ldic')
 
     print('Eliminating duplicate locations:')
@@ -610,29 +659,32 @@ def sort_common(group_name):
     fix_url_quotes(location_dictionary)
 
     get_stats(location_dictionary)
-    start_kml(group_name)
+    if args.leaflet: start_leaflet(group_name)
+    else: start_kml(group_name)
     return(location_dictionary)
 
-def sort_by_location(group_name):
-    location_dictionary = sort_common(group_name)
+def sort_by_location(args, group_name):
+    location_dictionary = sort_common(args, group_name)
     for item in sorted(location_dictionary.items()):
-        map_location(item[0], item[1])
-    end_kml()
+        map_location(args, item[0], item[1])
+    if args.leaflet: end_leaflet()
+    else: end_kml()
 
 def mykey(x):
     # x[0] is the key (the "raw" location)
     # x[1] is a location_dict_item
     return(len(x[1].members))
 
-def sort_by_number(group_name):
-    location_dictionary = sort_common(group_name)
+def sort_by_number(args, group_name):
+    location_dictionary = sort_common(args, group_name)
     for item in sorted(location_dictionary.items(), key=mykey, reverse=True):
-         map_location(item[0], item[1])
-    end_kml()
+         map_location(args, item[0], item[1])
+    if args.leaflet: end_leaflet()
+    else: end_kml()
 
-def make_kml_file(args, group_name):
-    if args.byloc: sort_by_location(group_name)
-    else: sort_by_number(group_name)
+def make_map(args, group_name):
+    if args.byloc: sort_by_location(args, group_name)
+    else: sort_by_number(args, group_name)
 
 #############################################################################
 #                                                                           #
@@ -656,6 +708,27 @@ def main(args):
 
     if args.disp_locations:
         display_location_dictionary(group_name)    
+        exit(0)
+
+    # See if we're just supposed to make a location dictionary
+    if args.make_ldic:
+        if not os.path.isfile(group_name + '.mdic'):
+            print('Location dict requested, but no member dict present')
+            print('Quitting.')
+            exit(0)
+        create_location_dictionary(group_name)
+        exit(0)
+
+    # Then see if a leaflet page was requested. We won't do this unless
+    # there is already a location dictionary available.
+
+    if args.leaflet:
+        if not os.path.isfile(group_name + '.ldic'):
+            print('Leaflet page requested, but have no location dictionary.')
+            print('Quitting.')
+            exit(0)
+        print('Making leaflet page ...')
+        make_map(args, group_name)
         exit(0)
 
     # Processing from this point on will depend on which dictionary files
@@ -695,7 +768,7 @@ def main(args):
     if args.bynum: print('by number of members')
     elif args.byloc: print('by location')
     else: print('by number of members')
-    make_kml_file(args, group_name)
+    make_map(args, group_name)
 
 main(parser.parse_args())
 
