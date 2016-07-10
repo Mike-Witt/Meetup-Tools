@@ -1,9 +1,13 @@
 
 <style type="text/css">
     ul { padding-top 0pt; }
-    ul li { padding-bottom: 4pt; }
+    ul li { padding-bottom: 6pt; }
     ol { padding-top 0pt; }
-    ol li { padding-bottom: 4pt; }
+    ol li { padding-bottom: 6pt; }
+    ul ul li { list-style-type: square; 
+        margin-left: -22pt; margin-top: 6pt; margin-bottom: -6pt}
+    ol ul li { list-style-type: square; 
+        margin-left: -22pt; margin-top: 6pt; margin-bottom: -6pt}
 </style>
 
 <title>Webscraping Meetup</title>
@@ -13,6 +17,11 @@
 <h2>Mapping Meetup Groups</h2>
 </center>
 <hr>
+
+<h3>Warning</h3>
+
+I'm working on this code right now. So some of the details of what's here will
+have probably changed by the time you read this!
 
 <h3>Motivation</h3>
 
@@ -41,33 +50,49 @@ Then, there are two additional things: <code>mechanize</code> which helps
     to download web pages in python, and <code>pyzipcode</code>, which
     translates US zip codes to geographic (longitude and latitude) coordinates.
 
-<h3>The structure of the code</h3>
+<h3>The structure of the system</h3>
 The system I ended up with has five elements:
 <ol>
-<li> A python program <code>Make-Zipcode-Dictionary.py</code> 
-    which reads the member list of your group and produces a file
-    containing a python "dictionary" that tells which group members
-    are in which zip code.
+<li> A member dictionary file: <code>My-Group-Name.mdic</code>
 
-<li> A python program <code>Make-Zipcode-Map.py</code> which reads the
-    dictionary file, sorts it based on various options, and produces
-    a .kml file. This file describes the map of your group.
-    KML is a markup language which can be uploded to
-    google maps (for example).
-
-<li> A python dictionary file: <code>My-Group-Name.dic</code>
+<li> A location dictionary file: <code>My-Group-Name.ldic</code>
 
 <li> A Keyhole markup language file: <code>My-Group-Name.kml</code>
 
 <li> A google map of your group.
+
+<li> A python program called <code>make_map.py</code> which does 
+    the following things:
+    <ul>
+    <li> Scrape the web page which has the member list of your group
+        and produce a ".mdic" file.
+        This file contains a python dictionary that tells which 
+        members are in which zip code.
+
+    <li> Read the member dictionary and create a ".ldic" file.
+        This file holds the location dictionary. Here the zip codes
+        have been translated into geographic coordinates.
+
+    <li> Read the location dictionary and sort it based on various options.
+        Then and produc a ".kml" file. This file describes the map of your
+        group.  KML is a markup language which can be uploaded to
+        google maps (for example) to produce the actual map.
+    </ul>
 </ol>
 
 <h3>Summary</h2>
+  If you want to do this, you need to get a copy of 
+    <code>make_map.py</code>. If you know
+  how to use git, the repository is 
+  <code>github.com/Mike-Witt/Meetup-Tools</code>. If you're not
+    familiar with git, email me and I'll send you the code:
+    msg2mw@gmail.com. 
 <pre>
   pip install pyzipcode
   pip install mechanize
-  ./Make-Zipcode-Dictionary.py My-Group-Name
-  ./Make-Zipcode-Map.py -bynum My-Group-Name
+  ./make_map.py --download My-Group-Name
+  ./make_map.py --make_ldic My-Group-Name
+  ./make_map.py --bynum My-Group-Name
   Upload My-Group-Name.kml to google maps
 </pre>
 
@@ -88,15 +113,14 @@ The system I ended up with has five elements:
 <li> Only works with with US groups
     <p>
     This program maps members based on zip (postal) codes. It appears that
-    Meetup only uses these in the US, and uses city names elsewhere. I
-    don't currently know where to find a public database that maps cities
-    to geo coordinates. I imagine there must be one. <i>Does anybody know?</i> 
+    Meetup only uses these in the US, and uses city names elsewhere. I'm
+    working on a non-US version.
 
 <li> Only works for members who gave their correct zip code (obviously).
 
 <li> Meetup may change the format of their pages any time. At best, this
     means tweaking the code for the new format. At worst, they might stop
-    providing zip code information, obsoleting the whole process.
+    providing this information, obsoleting the whole process.
 </ul>
 
 <h3>References</h3>

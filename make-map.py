@@ -428,6 +428,12 @@ number_table = {}
 
 color_table = {}
 
+# These are the extremes of the geographic coordinates encountered.
+# This information is used to center the map and determine the zoom
+#  factor (for leaflets only.)
+
+high_lat = -91; high_lon = -181; low_lat = 91; low_lon = 181
+
 # Specific icons that can be used. Select one below
 
 DEFAULT='http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png'
@@ -455,10 +461,13 @@ low_color = 200
 #
 
 def start_leaflet(group_name):
-    global leaflet_page
+    global leaflet_page, high_lat, low_lat, high_lon, low_lon
+    title = 'Leaflet Meetup Map'
+    heading = group_name
     leaflet_page = open(group_name + '.html', 'w')
     leaflet_start = open('leaflet-start', 'r')
-    leaflet_page.write(leaflet_start.read())
+    lstart = leaflet_start.read()
+    leaflet_page.write(lstart%(title, heading, low_lat, low_lon, high_lat, high_lon))
     leaflet_start.close()
     
 def leafln(text):
@@ -525,8 +534,19 @@ def end_kml():
     kmlline("</kml>")
 
 def get_stats(location_dictionary):
-    global location_dionary, number_table, color_table
+    global number_table, color_table, high_lat, low_lat, high_lon, low_lon
     for item in sorted(location_dictionary.items(), key=mykey, reverse=True):
+
+        # If we've got good coordinates, then save the highs and lows
+        try:
+            lon = float(item[1].longitude)
+            lat = float(item[1].latitude)
+            if lon > high_lon: high_lon = lon
+            if lat > high_lat: high_lat = lat
+            if lon < low_lon: low_lon = lon
+            if lat < low_lat: low_lat = lat
+        except ValueError: pass
+
         location = item[0]
         people = item[1].members
         n_members = len(people)
@@ -550,6 +570,7 @@ def get_stats(location_dictionary):
         msg = '  There are %s locations with %s members'%(n_locations, n_members)
         msg += ', color: %s'%color_table[n_members]
         print(msg)
+    print('Latitude: (%s, %s), Longitude: (%s, %s)' %(low_lat, high_lat, low_lon, high_lon))
 
 def map_location(args, location, item):
     if args.leaflet: map_location_leaflet(location, item)
@@ -558,20 +579,37 @@ def map_location(args, location, item):
 def map_location_leaflet(location, item):
     lon = item.longitude
     lat = item.latitude
-    print('map_location_leaflet(): lat=%s, lon=%s' %(lat, lon))
+    debug('map_location_leaflet(): lat=%s, lon=%s' %(lat, lon))
+
+    # Skip this item if we never found the coordinates
+    if lon == '' or lat == '':
+        debug('Skipping: %s (%s members)'%(location, len(item.members)))
+        return
 
     if item.zip != '':
         loc = item.zip
     else: 
+        #print('City="%s", Country="%s"'%(item.city, item.country))
         loc = item.city[0].upper() + item.city[1:] + ', ' + item.country.upper()
 
     leafln('    L.marker([%s, %s]).addTo(mymap)' %(lat, lon))
     leafln('        .bindPopup(')
+
+    # With location
     #members_string = 'Location: %s'%loc
+    members_string = '<b>%s</b>'%loc
+    for n in range(len(item.members)):
+        members_string += '<br>'
+        members_string += '%s'%item.members[n]
+
+    """
+    # Without location
     members_string = ''
     for n in range(len(item.members)):
         if n != 0: members_string += '<br>'
         members_string += '%s'%item.members[n]
+    """
+
     leafln('            "%s")' %members_string)
 
 def map_location_kml(location, item):
@@ -611,9 +649,9 @@ def map_location_kml(location, item):
 def merge_locations(location_dictionary, target, source, coords):
     # Target and source are raw location (indices in the location_dictionary).
     # Merge all the members from source into target
-    print('  %s and %s have the same geographic coordinates: %s'
+    debug('  %s and %s have the same geographic coordinates: %s'
         %(target, source, coords))
-    print('    Merging members from %s into %s and deleting %s'
+    debug('    Merging members from %s into %s and deleting %s'
         %(source, target, source))
     target_item = location_dictionary[target]
     source_item = location_dictionary[source]
@@ -646,7 +684,7 @@ def fix_url_quotes(location_dictionary):
         city = item[1].city
         if '%' in city:
             new_city = urllib2.unquote(city)
-            print('  Fixing: %s --> %s'%(city, new_city))
+            debug('  Fixing: %s --> %s'%(city, new_city))
             item[1].city = new_city
             location_dictionary[item[0]] = item[1]
 
