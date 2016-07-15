@@ -15,7 +15,7 @@ import urllib2
 from time import sleep, time
 import geopy
 from geopy.geocoders import Nominatim
-from pyzipcode import ZipCodeDatabase
+# from pyzipcode import ZipCodeDatabase (imported in functions that need it)
 
 #############################################################################
 #                                                                           #
@@ -43,7 +43,7 @@ def main():
     parser = setup_argparse()
     args = parser.parse_args()
     if args.debug_level != None: debug_level = args.debug_level
-    #print('debug_level: %s'%debug_level)
+    print('debug_level: %s'%debug_level)
 
     # If the meetup page for your group is:
     #   http://www.meetup.com/Denver-Eccentrics-Meetup/
@@ -298,11 +298,190 @@ def display_member_dictionary(group_name):
 #                                                                           #
 #############################################################################
 
+class location_dict_item:
+    def __init__(self):
+        self.country = ''
+        self.city = ''
+        self.zip = ''
+        self.latitude = ''
+        self.longitude = ''
+        self.members = []
+
+    def show(self):
+        return(
+            'country=%s, city=%s, zip=%s, lat=%s, lon=%s, members=%s'
+            %(self.country, self.city, self.zip, self.latitude,
+              self.longitude, self.members)
+        )
+
+class location_stats:
+    def __init__(self):
+        self.n_attempted = 0
+        self.n_found = 0
+        self.good_zips = 0
+        self.good_cities = 0
+        self.bad_zips = 0
+        self.bad_cities = 0
+
+    def show(self):
+        return(
+            '  number tried: %s\n'%self.n_attempted +
+            '  number found: %s\n'%self.n_found +
+            '  good_zips %s\n'%self.good_zips +
+            '  bad_zips  %s\n'%self.bad_zips +
+            '  good_cities %s\n'%self.good_cities +
+            '  bad_cities  %s\n'%self.bad_cities
+        )
+
 def create_location_dictionary(group_name):
-    print('create_location_dictionary(): not done yet.')
+    dict_name = group_name + '.ldic'
+    debug('Creating: %s' %dict_name, 10)
+    member_dictionary = read_dict(group_name + '.mdic')
+    location_dictionary = {}
+
+    debug('Sorting members', 10)
+    for item in member_dictionary.items():
+        name = item[1][0]
+        location = item[1][1]
+        if location_dictionary.get(location) == None:
+            debug('Adding %s to the location dictionary'%location)
+            location_dictionary[location] = location_dict_item()
+        item = location_dictionary[location]
+        item.members += [ name, ]
+        debug('  Added member "%s" to location "%s"'%(name, location))
+
+    # Fill in the actual geographic coordinates
+    debug('Finding geographic coordinates', 10)
+    debug('Note: Status will be provided about once per minute ...', 10)
+    stats = location_stats()
+    num_locs = len(location_dictionary)
+    num_done = 0
+    start_time = time()
+    last_status = time()
+    for record in location_dictionary.items():
+        location = record[0]
+        item = record[1]
+        get_location_info(stats, location, item)
+        location_dictionary[location] = item
+        num_done += 1
+        if (time() - last_status) > 60:
+            last_status = time()
+            time_elapsed = time() - start_time
+            time_per_loc = time_elapsed / num_locs
+            min_left = (num_locs - num_done) * time_per_loc/60
+            debug('%s locations done out of %s total. Est %s minutes left'
+                %(num_done, num_locs, int(min_left)), 10);
+    debug('Location statistics:', 10)
+    debug('%s'%stats.show(), 10)
+
+    # Write the dictionary out to disk
+    write_dict(dict_name, location_dictionary)
+
+def get_location_info(stats, location, item):
+    from pyzipcode import ZipCodeDatabase
+    zcdb = ZipCodeDatabase()
+    stats.n_attempted += 1
+
+    # Split the location string up, eliminating the nulls on both ends
+    foo = location.split('/')[1:-1]
+    item.country = foo[0]
+    if item.country == 'us':
+        item.zip = foo[1]
+        try: place = zcdb[item.zip]
+        except:
+            debug(location, 20)
+            debug('Can\'t find zip code %s'%item.zip, 20)
+            stats.bad_zips += 1
+            return
+        if place == None or place == '':
+            debug(location, 20)
+            debug('Can\'t find zip code %s'%item.zip, 20)
+            stats.bad_zips += 1
+            return
+        item.latitude = place.latitude
+        item.longitude = place.longitude
+        stats.n_found += 1
+        stats.good_zips += 1
+
+    elif item.country == 'gb' or item.country == 'ca':
+        if len(foo) != 3:
+            debug(location, 20)
+            debug('Country is %s but we don\'t have a region code'%item.country, 20)
+            stats.bad_cities += 1
+            return
+        item.city = foo[2]
+        lookup_string = item.city + ', ' + item.country
+        place = geo_lookup(lookup_string)
+
+        if place == None or place == '':
+            debug(location, 20)
+            debug('Can\'t find coords of country = "%s", city = "%s"'\
+                %(item.country, item.city), 20)
+            stats.bad_cities += 1
+            return
+        item.latitude = place.latitude
+        item.longitude = place.longitude
+        stats.good_cities += 1
+        stats.n_found += 1
+
+    else:
+        # So far, it *appears* the countries other than GB, CA and US
+        # follow the format /COUNTRY/CITY
+        if len(foo) != 2:
+            debug('Country is %s. Can\'t parse: %s'
+                %(item.country, location), 20)
+            stats.bad_cities += 1
+            return
+        item.city = foo[1]
+        lookup_string = item.city + ', ' + item.country
+        place = geo_lookup(lookup_string)
+
+        if place == None or place == '':
+            debug('Can\'t find coords of country = "%s", city = "%s"'\
+                %(item.country, item.city), 20)
+            stats.bad_cities += 1
+            return
+        item.latitude = place.latitude
+        item.longitude = place.longitude
+        stats.good_cities += 1
+        stats.n_found += 1
+
+# geo_lookup(), get_location_info(), and fill_in_geo_locations are all
+#   used to put the actual geograhic coordinates (longitude and latidude)
+#   into the Location Dictionary.
+
+def geo_lookup(lookup_string):
+    geolocator = Nominatim()
+    sleep_time = 5
+    # We'll potentially keep trying until we get either the answer or
+    # an error other than timeout, etc.
+    while(True):
+        try:
+            place = geolocator.geocode(lookup_string)
+            return(place)
+        except geopy.exc.GeocoderTimedOut:
+            debug('GeocoderTimedOut, sleep %s seconds and retry ...'%sleep_time, 10)
+            sleep(sleep_time)
+            continue
+        except geopy.exc.GeocoderUnavailable:
+            debug('GeocoderUnavailable, sleep %s seconds and retry ...'%sleep_time, 10)
+            sleep(sleep_time)
+            continue
+        except KeyboardInterrupt:
+            print('User abort')
+            exit(0)
+        except:
+            e = sys.exc_info()[0]
+            print(location)
+            print('Looking up: %s'%lookup_string);
+            print('UNEXPECTED Geocoder error: %s'%e)
+            return(None)
 
 def display_location_dictionary(group_name):
-    print('display_location_dictionary(): not done yet.')
+    dict = read_dict(group_name + '.ldic')
+    for item in dict.items():
+       print('Location: %s'%item[0])
+       print('  %s'%item[1].show())
 
 #############################################################################
 #                                                                           #
