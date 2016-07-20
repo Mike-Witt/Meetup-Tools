@@ -123,7 +123,8 @@ def get_page(url):
     br = mechanize.Browser()
     br.set_handle_robots(False)
     br.set_handle_equiv(False)
-    br.addheaders = [('User-agent', 'Mozilla/5.0')]
+    #br.addheaders = [('User-agent', 'Mozilla/5.0')]
+    br.addheaders = [('User-agent', 'make_map/msg2mw@gmail.com')]
     response = br.open(url)
     return(response.read())
 

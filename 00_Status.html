@@ -5,44 +5,37 @@
 
 <h2>Notes</h2>
 <ul>
-<li> July 18: Somewhat cleaned up. <code>OLD-make-map.py</code> is the
+<li> 20 July 2016: Somewhat cleaned up. <code>OLD-make-map.py</code> is the
     older version, which I'll save for comparison for a while.
 </ul>
 
 <h2>Things to do</h2>
 <ul>
-<li> BUG: Krakow, PL, shows up around Manchester GB.
-    <br>- Try to <i>explicitly</i> feed the country code to geopy?
 <li>I should use *everything but* the last name, as first_name.
-    <br>- Examples: Mary Anne and R. Todd
-<li>Fix (1) README.md, (2) Documentation below, (3) "Presentation"
-<font color=grey>
-<li> Look at Meetup API in ttd/meetup-code(?)
-<li> Look at "how to use a schema.org postal address" in ttd/maps(?)
-</font>
+    <br>- Examples: "Billy Jo" and "N. David"
+<p>
+<li> BUG: Krakow, PL, shows up around Manchester GB.
+    <br>- Can't find a way to <i>explicitly</i> feed the country code to geopy
+    <br>- But: ./GeopyTest.py 'Kraków, PL' / Get's the right answer!
+    <br>Here's another one:
+    <br>- Shows up just southwest of London, but ...
+    <br>- ./GeopyTest.py 'Zürich, CH' / Zürich, Bezirk Zürich, Zürich, 
+        Schweiz, Suisse, Svizzera, Svizra
+    <br>So, maybe my "quoting" code is bad, or something like that?
 </ul>
 
-<h2>General Scheme</h2>
+<h2>Misc.</h2>
 <ul>
 <li> The reason for the separate "member dictionary" and "location dictionary"
     is so that we can (in the member dict) maintain the original form of the
     information obtained from meetup, and try different techniques to parse
     it, without having to hit the meetup sites again.
-<p>
-<li> Right now <b>make-map</b> does everything, based on the flags given it:
-    <br><code>./make-map -D my-group-name</code> basically does everything
-    <br><code>./make-map my-group-name</code>
-        will build everything if the member dict exists
-    <br><code>./make-map -dm my-group-name</code> shows the member dict
-    <br><code>./make-map -dl my-group-name</code> shows the location dict
 </ul>
 
-<h2>Names</h2>
+<h2>Example Group Names</h2>
 <code>
 <ul>
-<li> Denver-Physics-Philosophy-Meetup
-<li> Quantum-Physics-Meetup-Group
-<li> Turning-to-Complexity-Beta
-<li> Relativity-Exploration-of-Portland
+<li> Denver-Physics
+<li> Virgina-Village-Eclectics
 </ul>
 </code>

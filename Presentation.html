@@ -91,8 +91,8 @@ The system I ended up with has five elements:
   pip install pyzipcode
   pip install mechanize
   ./make_map.py --download My-Group-Name
-  ./make_map.py --make_ldic My-Group-Name
-  ./make_map.py --bynum My-Group-Name
+  ./make_map.py --geo My-Group-Name
+  ./make_map.py --bynum --kml My-Group-Name
   Upload My-Group-Name.kml to google maps
 </pre>
 
@@ -102,7 +102,8 @@ The system I ended up with has five elements:
     would not run as-is on python 3.
 
 <li> The exact commands listed above are for Linux. There may be differences
-    on other systems.
+    on other systems. There may be other reasons why this won't run on
+    non-*nix type systems.
 
 <li> Doesn't work with groups that are visible only to members.
     <p>
@@ -114,7 +115,8 @@ The system I ended up with has five elements:
     <p>
     This program maps members based on zip (postal) codes. It appears that
     Meetup only uses these in the US, and uses city names elsewhere. I'm
-    working on a non-US version.
+    working on a non-US version. (Note: 20 July 2016 - It "sort of" works
+    outside the US now, but there are some issues.)
 
 <li> Only works for members who gave their correct zip code (obviously).
 
