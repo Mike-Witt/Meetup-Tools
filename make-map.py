@@ -795,7 +795,7 @@ def map_location_kml(location, item):
 # "leaflet-end" file.
 
 def start_leaflet(mp, group_name):
-    global leaflet_page
+    global leaflet_page, group_data
     title = 'Leaflet Meetup Map'
     heading = group_name
     leaflet_page = open(group_name + '.html', 'w')
@@ -803,6 +803,9 @@ def start_leaflet(mp, group_name):
     lstart = leaflet_start.read()
     leaflet_page.write(lstart%(title, heading, mp.low_lat, mp.low_lon, mp.high_lat, mp.high_lon))
     leaflet_start.close()
+    # Below is the new way. Once that's working the stuff above is obs.
+    group_data = open('group-data.js', 'w')
+    group_data.write('var locations = [\n')
 
 def leafln(text):
     global leaflet_page
@@ -814,6 +817,9 @@ def end_leaflet():
     leaflet_page.write(leaflet_end.read())
     leaflet_end.close()
     leaflet_page.close()
+    # Below is the new way. Once that's working the stuff above is obs.
+    group_data.write('];\n')
+    group_data.close()
 
 #
 # Helper function to sort by number of members in a location
@@ -888,6 +894,9 @@ def map_location_leaflet(mp, location, item):
     """
 
     leafln('            "%s")' %members_string)
+
+    # New Way -- but needs some of the above logic!
+    group_data.write('[%s, %s, "%s"],\n' %(lat, lon, members_string))
 
 #############################################################################
 #                                                                           #
